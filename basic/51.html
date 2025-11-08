@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program To Calculate Power Of Number
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class PowerOfNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input base and exponent
+        System.out.print("Enter the base number: ");
+        double base = sc.nextDouble();
+
+        System.out.print("Enter the exponent: ");
+        double exponent = sc.nextDouble();
+
+        // Calculate power using Math.pow()
+        double result = Math.pow(base, exponent);
+
+        // Display result
+        System.out.println(base + " raised to the power of " + exponent + " is: " + result);
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the base number: 2
+Enter the exponent: 5
+2.0 raised to the power of 5.0 is: 32.0
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

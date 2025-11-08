@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program that accepts an integer (n) and computes the value of n+nn+nnn
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class ComputeN_NN_NNN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input integer n
+        System.out.print("Enter an integer (n): ");
+        int n = sc.nextInt();
+
+        // Create nn and nnn using string concatenation
+        String nnStr = Integer.toString(n) + Integer.toString(n);
+        String nnnStr = nnStr + Integer.toString(n);
+
+        // Convert back to integers
+        int nn = Integer.parseInt(nnStr);
+        int nnn = Integer.parseInt(nnnStr);
+
+        // Compute result
+        int result = n + nn + nnn;
+
+        // Display results
+        System.out.println("\nn = " + n);
+        System.out.println("nn = " + nn);
+        System.out.println("nnn = " + nnn);
+        System.out.println("Result (n + nn + nnn) = " + result);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter an integer (n): 5
+
+n = 5
+nn = 55
+nnn = 555
+Result (n + nn + nnn) = 61
+
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //Create a program, showing an example of dynamic method dispatch
+            </h4>
+ <pre>
+   // Parent class
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Subclass 1
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks: Woof Woof!");
+    }
+}
+
+// Subclass 2
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows: Meow Meow!");
+    }
+}
+
+// Main class
+public class DynamicMethodDispatchExample {
+    public static void main(String[] args) {
+        // Reference of parent class
+        Animal animal;
+
+        // Object of Dog assigned to parent reference
+        animal = new Dog();
+        animal.makeSound();  // Calls Dog's version of makeSound()
+
+        // Object of Cat assigned to parent reference
+        animal = new Cat();
+        animal.makeSound();  // Calls Cat's version of makeSound()
+
+        // Object of Animal assigned to parent reference
+        animal = new Animal();
+        animal.makeSound();  // Calls Animal's version of makeSound()
+    }
+}     
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>  
+   Dog barks: Woof Woof!
+Cat meows: Meow Meow!
+Animal makes a sound
+ 
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                // Program to prove String is immutable programmatically
+           </h4>
+<pre>
+    public class StringImmutableDemo {
+    public static void main(String[] args) {
+        String original = "Hello";
+
+        // Try to modify the string
+        String modified = original.concat(" World");
+
+        // Display the strings
+        System.out.println("Original String: " + original);
+        System.out.println("Modified String: " + modified);
+
+        // Check if both references are same
+        if (original == modified) {
+            System.out.println("Both refer to the same object.");
+        } else {
+            System.out.println("Both refer to different objects.");
+        }
+    }
+}
+
+         
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Original String: Hello
+Modified String: Hello World
+Both refer to different objects.
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

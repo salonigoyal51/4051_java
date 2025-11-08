@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create a class called Employee with methods called work() and getSalary(). 
+            </h4>
+ <pre>
+    // Base class
+class Shape {
+    double getArea() {
+        System.out.println("Area not defined for generic shape");
+        return 0;
+    }
+}
+
+// Subclass
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double getArea() {
+        return length * width;
+    }
+}
+
+// Main class
+public class ShapeExample {
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle(8, 4);
+        System.out.println("Area of Rectangle: " + rect.getArea());
+    }
+}      
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+   Area of Rectangle: 32.0
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

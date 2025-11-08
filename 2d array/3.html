@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+                 <h4> 
+                    // Multiplication of matrix
+                 </h4>
+     <pre>
+                
+   import java.util.Scanner;
+
+public class MultiplyTwoMatrices {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input dimensions of first matrix
+        System.out.print("Enter number of rows in first matrix: ");
+        int rows1 = sc.nextInt();
+        System.out.print("Enter number of columns in first matrix: ");
+        int cols1 = sc.nextInt();
+
+        // Input dimensions of second matrix
+        System.out.print("Enter number of rows in second matrix: ");
+        int rows2 = sc.nextInt();
+        System.out.print("Enter number of columns in second matrix: ");
+        int cols2 = sc.nextInt();
+
+        // Check if multiplication is possible
+        if (cols1 != rows2) {
+            System.out.println("Matrix multiplication not possible! (columns of first ≠ rows of second)");
+            return;
+        }
+
+        int[][] a = new int[rows1][cols1];
+        int[][] b = new int[rows2][cols2];
+        int[][] result = new int[rows1][cols2];
+
+        // Input elements for first matrix
+        System.out.println("Enter elements of first matrix:");
+        for (int i = 0; i &lt; rows1; i++) {
+            for (int j = 0; j &lt; cols1; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        // Input elements for second matrix
+        System.out.println("Enter elements of second matrix:");
+        for (int i = 0; i &lt; rows2; i++) {
+            for (int j = 0; j &lt; cols2; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+
+        // Multiply matrices
+        for (int i = 0; i &lt; rows1; i++) {
+            for (int j = 0; j &lt; cols2; j++) {
+                result[i][j] = 0;
+                for (int k = 0; k &lt; cols1; k++) {
+                    result[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        // Display result
+        System.out.println("Product of the two matrices is:");
+        for (int i = 0; i &lt; rows1; i++) {
+            for (int j = 0; j &lt; cols2; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+         </pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+     Enter number of rows in first matrix: 2
+Enter number of columns in first matrix: 3
+Enter number of rows in second matrix: 3
+Enter number of columns in second matrix: 2
+Enter elements of first matrix:
+1 2 3
+4 5 6
+Enter elements of second matrix:
+7 8
+9 10
+11 12
+Product of the two matrices is:
+58 64
+139 154          
+           </pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

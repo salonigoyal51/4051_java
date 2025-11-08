@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program that reads an integer and check whether it is negative, zero, or positive
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class NumberCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+
+        if (num &gt; 0) {
+            System.out.println(num + " is a positive number.");
+        } else if (num &lt; 0) {
+            System.out.println(num + " is a negative number.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter an integer: 12
+12 is a positive number.
+Enter an integer: -5
+-5 is a negative number.
+Enter an integer: 0
+The number is zero. 
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. 
+           </h4>
+<pre>
+// File: SortableDescendingExample.java
+
+// Step 1: Define the interface
+interface Sortable {
+    void sort(int[] array);  // Abstract method to sort an array
+}
+
+// Step 2: Implement QuickSort class
+class QuickSort implements Sortable {
+
+    @Override
+    public void sort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+        System.out.println("Array sorted using QuickSort (Descending):");
+        display(array);
+    }
+
+    // Recursive QuickSort logic
+    private void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    // Partition method (modified for descending order)
+    private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] > pivot) {  // Descending comparison
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+
+    private void display(int[] arr) {
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
+    }
+}
+
+// Step 3: Implement MergeSort class
+class MergeSort implements Sortable {
+
+    @Override
+    public void sort(int[] array) {
+        mergeSort(array, 0, array.length - 1);
+        System.out.println("Array sorted using MergeSort (Descending):");
+        display(array);
+    }
+
+    // Recursive MergeSort logic
+    private void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+
+    // Merge method for descending order
+    private void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; j++)
+            R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0, k = left;
+
+        while (i < n1 && j < n2) {
+            if (L[i] >= R[j]) { // Descending comparison
+                arr[k++] = L[i++];
+            } else {
+                arr[k++] = R[j++];
+            }
+        }
+
+        while (i < n1) arr[k++] = L[i++];
+        while (j < n2) arr[k++] = R[j++];
+    }
+
+    private void display(int[] arr) {
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
+    }
+}
+
+// Step 4: Main class to test both sorting algorithms
+public class SortableDescendingExample {
+    public static void main(String[] args) {
+        int[] numbers1 = {5, 1, 9, 3, 7, 2};
+        int[] numbers2 = {8, 4, 6, 10, 5, 3};
+
+        Sortable quickSort = new QuickSort();
+        Sortable mergeSort = new MergeSort();
+
+        quickSort.sort(numbers1);
+        mergeSort.sort(numbers2);
+    }
+} 
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Array sorted using QuickSort (Descending):
+9 7 5 3 2 1 
+Array sorted using MergeSort (Descending):
+10 8 6 5 4 3 
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

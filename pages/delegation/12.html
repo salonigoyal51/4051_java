@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Display a Message in a New Frame
+           </h4>
+<pre>
+ import java.awt.*;
+import java.awt.event.*;
+
+public class MessageFrameExample extends Frame implements ActionListener {
+
+    Button showButton;
+
+    public MessageFrameExample() {
+        // Frame title
+        super("Main Frame");
+
+        // Layout
+        setLayout(new FlowLayout());
+
+        // Button to show message in new frame
+        showButton = new Button("Show Message");
+        add(showButton);
+
+        // Register event listener
+        showButton.addActionListener(this);
+
+        // Frame properties
+        setSize(300, 150);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Handle button click
+    public void actionPerformed(ActionEvent e) {
+        // Create a new frame
+        Frame messageFrame = new Frame("Message Frame");
+        messageFrame.setLayout(new FlowLayout());
+
+        // Add a label with the message
+        Label messageLabel = new Label("Hello! This is a message in a new frame.");
+        messageFrame.add(messageLabel);
+
+        // Set frame size and make visible
+        messageFrame.setSize(350, 150);
+        messageFrame.setVisible(true);
+
+        // Handle window closing for new frame
+        messageFrame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                messageFrame.dispose();
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new MessageFrameExample();
+    }
+}   
+     
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Main Frame:
+
+[Button] Show Message
+
+
+After clicking the button:
+
+A new frame appears with the message:
+
+Hello! This is a message in a new frame.
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

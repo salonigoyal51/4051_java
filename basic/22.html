@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //count the number of even and odd elements in a given array
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CountEvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input size of the array
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int evenCount = 0, oddCount = 0;
+
+        // Count even and odd elements
+        for (int i = 0; i &lt; n; i++) {
+            if (arr[i] % 2 == 0)
+                evenCount++;
+            else
+                oddCount++;
+        }
+
+        // Display the results
+        System.out.println("\nNumber of even elements: " + evenCount);
+        System.out.println("Number of odd elements: " + oddCount);
+
+        sc.close();
+    }
+}  
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements in the array: 6
+Enter the elements of the array:
+2 5 8 9 12 15
+
+Number of even elements: 3
+Number of odd elements: 3
+
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

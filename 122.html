@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Write a Java method to count all words in a string
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CountWords {
+
+    // Method to count words in a string
+    public static int countWords(String str) {
+        // Trim leading and trailing spaces
+        str = str.trim();
+
+        // If the string is empty, return 0
+        if (str.isEmpty()) {
+            return 0;
+        }
+
+        // Split string by one or more spaces
+        String[] words = str.split("\\s+");
+        return words.length;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string from user
+        System.out.print("Enter a sentence: ");
+        String input = sc.nextLine();
+
+        // Call method and display result
+        int wordCount = countWords(input);
+        System.out.println("Number of words in the string: " + wordCount);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a sentence: Java is a powerful programming language
+Number of words in the string: 6
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

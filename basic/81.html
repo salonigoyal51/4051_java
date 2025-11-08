@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to count total number of lines from a string
+           </h4>
+<pre>
+  public class CountLinesInString {
+    public static void main(String[] args) {
+        // Sample multiline string
+        String text = "This is line one.\nThis is line two.\nThis is line three.";
+
+        // Split the string by newline character
+        String[] lines = text.split("\n");
+
+        // Count number of lines
+        int numberOfLines = lines.length;
+
+        // Display result
+        System.out.println("The text is:\n" + text);
+        System.out.println("\nTotal number of lines: " + numberOfLines);
+    }
+}
+
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   The text is:
+This is line one.
+This is line two.
+This is line three.
+
+Total number of lines: 3 
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

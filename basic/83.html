@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //find the index of an array element
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class FindIndex {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Input element to search
+        System.out.print("Enter the element to find index of: ");
+        int key = sc.nextInt();
+
+        int index = -1; // default: not found
+
+        // Search for the element
+        for (int i = 0; i &lt; n; i++) {
+            if (arr[i] == key) {
+                index = i; // store index
+                break;
+            }
+        }
+
+        // Display result
+        if (index == -1)
+            System.out.println("Element not found in the array.");
+        else
+            System.out.println("Element " + key + " found at index: " + index);
+
+        sc.close();
+    }
+}    
+                
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter number of elements in the array: 5
+Enter 5 elements:
+10 25 30 45 50
+Enter the element to find index of: 30
+Element 30 found at index: 2
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

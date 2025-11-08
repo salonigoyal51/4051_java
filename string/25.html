@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to find the duplicate words in a string
+           </h4>
+<pre>      
+     import java.util.HashMap;
+import java.util.Scanner;
+
+public class DuplicateWords {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase(); // convert to lowercase for case-insensitive comparison
+
+        // Split the string into words
+        String[] words = str.split("\\s+"); // split by spaces
+
+        // Count frequency of each word
+        HashMap<String, Integer> wordCount = new HashMap<>();
+        for (String word : words) {
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, 1);
+            }
+        }
+
+        // Display duplicate words
+        System.out.println("Duplicate words in the string are:");
+        boolean found = false;
+        for (String word : wordCount.keySet()) {
+            if (wordCount.get(word) > 1) {
+                System.out.println(word + " appears " + wordCount.get(word) + " times");
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No duplicate words found.");
+        }
+
+        sc.close();
+    }
+}
+       
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Enter a string: Java is fun and Java is easy
+Duplicate words in the string are:
+java appears 2 times
+is appears 2 times
+Enter a string: Hello world
+No duplicate words found.
+    
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

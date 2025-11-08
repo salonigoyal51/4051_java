@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+//create a class called Shape with a method called getArea().             
+ </h4>
+ <pre>
+  // Parent class
+class Shape {
+    // Method to get area (to be overridden)
+    double getArea() {
+        System.out.println("Area of shape is not defined");
+        return 0;
+    }
+}
+
+// Child class
+class Rectangle extends Shape {
+    double length;
+    double width;
+
+    // Constructor to initialize rectangle dimensions
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Overriding the getArea() method
+    @Override
+    double getArea() {
+        return length * width;
+    }
+}
+
+// Main class to test the program
+public class InheritanceShapeExample {
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Rectangle rect = new Rectangle(10.5, 5.5);
+
+        // Display the area
+        System.out.println("Area of Rectangle: " + rect.getArea());
+    }
+}
+  
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+  Area of Rectangle: 57.75
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

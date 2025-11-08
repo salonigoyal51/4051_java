@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //Create a program, showing an example of super keyword
+            </h4>
+ <pre>   
+       // Parent class
+class Animal {
+    String name = "Generic Animal";
+
+    // Constructor
+    Animal() {
+        System.out.println("Animal constructor called");
+    }
+
+    // Method
+    void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    String name = "Dog";
+
+    // Constructor
+    Dog() {
+        // Calls parent class constructor
+        super();
+        System.out.println("Dog constructor called");
+    }
+
+    // Method overriding
+    @Override
+    void makeSound() {
+        // Calls parent class method using super
+        super.makeSound();
+        System.out.println("Dog barks: Woof Woof!");
+    }
+
+    // Method to show variable access
+    void displayNames() {
+        System.out.println("Child class name: " + name);
+        System.out.println("Parent class name: " + super.name);
+    }
+}
+
+// Main class
+public class SuperKeywordExample {
+    public static void main(String[] args) {
+        Dog d = new Dog(); // Constructor chaining demonstration
+
+        System.out.println();
+        d.displayNames();  // Accessing parent variable using super
+        System.out.println();
+        d.makeSound();     // Calling parent method using super
+    }
+} 
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+    Animal constructor called
+Dog constructor called
+
+Child class name: Dog
+Parent class name: Generic Animal
+
+Some generic animal sound
+Dog barks: Woof Woof!  
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

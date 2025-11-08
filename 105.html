@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program to Accept the Marks of a Student and find Total Marks and Percentage
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class StudentMarks {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of subjects
+        System.out.print("Enter the number of subjects: ");
+        int n = sc.nextInt();
+
+        int[] marks = new int[n];
+        int total = 0;
+
+        // Input marks for each subject
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print("Enter marks of subject " + (i + 1) + ": ");
+            marks[i] = sc.nextInt();
+            total += marks[i];
+        }
+
+        // Calculate percentage
+        double percentage = (double) total / n;
+
+        // Display results
+        System.out.println("\nTotal Marks = " + total);
+        System.out.println("Percentage = " + percentage + "%");
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of subjects: 5
+Enter marks of subject 1: 78
+Enter marks of subject 2: 82
+Enter marks of subject 3: 69
+Enter marks of subject 4: 90
+Enter marks of subject 5: 85
+
+Total Marks = 404
+Percentage = 80.8%
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create an interface Flyable with a method called fly_obj().
+           </h4>
+<pre>
+  // File: FlyableInterfaceExample.java
+
+// Step 1: Define the interface
+interface Flyable {
+    void fly_obj();  // Abstract method
+}
+
+// Step 2: Implement Flyable in Spacecraft
+class Spacecraft implements Flyable {
+    @Override
+    public void fly_obj() {
+        System.out.println("Spacecraft is flying in space.");
+    }
+}
+
+// Step 3: Implement Flyable in Airplane
+class Airplane implements Flyable {
+    @Override
+    public void fly_obj() {
+        System.out.println("Airplane is flying in the sky.");
+    }
+}
+
+// Step 4: Implement Flyable in Helicopter
+class Helicopter implements Flyable {
+    @Override
+    public void fly_obj() {
+        System.out.println("Helicopter is hovering above the ground.");
+    }
+}
+
+// Step 5: Main class to test the program
+public class FlyableInterfaceExample {
+    public static void main(String[] args) {
+        // Create objects of each class
+        Flyable spacecraft = new Spacecraft();
+        Flyable airplane = new Airplane();
+        Flyable helicopter = new Helicopter();
+
+        // Call the fly_obj() method for each
+        spacecraft.fly_obj();
+        airplane.fly_obj();
+        helicopter.fly_obj();
+    }
+}      
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Spacecraft is flying in space.
+Airplane is flying in the sky.
+Helicopter is hovering above the ground.
+                    
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

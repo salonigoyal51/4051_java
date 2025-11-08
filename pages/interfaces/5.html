@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. 
+           </h4>
+<pre>
+ // File: ResizableRectangleExample.java
+
+// Step 1: Define the interface
+interface Resizable {
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+
+// Step 2: Create Rectangle class implementing Resizable
+class Rectangle implements Resizable {
+    private int width;
+    private int height;
+
+    // Constructor
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Implement the methods from Resizable interface
+    @Override
+    public void resizeWidth(int width) {
+        this.width = width;
+        System.out.println("Width resized to: " + this.width);
+    }
+
+    @Override
+    public void resizeHeight(int height) {
+        this.height = height;
+        System.out.println("Height resized to: " + this.height);
+    }
+
+    // Method to calculate area
+    public int getArea() {
+        return width * height;
+    }
+
+    // Method to display rectangle details
+    public void display() {
+        System.out.println("Rectangle [Width: " + width + ", Height: " + height + ", Area: " + getArea() + "]");
+    }
+}
+
+// Step 3: Main class to test the program
+public class ResizableRectangleExample {
+    public static void main(String[] args) {
+        // Create a rectangle object
+        Rectangle rect = new Rectangle(10, 5);
+        rect.display();
+
+        // Resize the rectangle using interface methods
+        rect.resizeWidth(20);
+        rect.resizeHeight(10);
+
+        // Display updated dimensions
+        rect.display();
+    }
+}   
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Rectangle [Width: 10, Height: 5, Area: 50]
+Width resized to: 20
+Height resized to: 10
+Rectangle [Width: 20, Height: 10, Area: 200]
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

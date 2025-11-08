@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //display the n terms of odd natural number and their sum
+           </h4>
+<pre>
+import java.util.Scanner;
+
+public class OddNumbersSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of terms
+        System.out.print("Enter the number of terms: ");
+        int n = sc.nextInt();
+
+        int sum = 0;
+
+        System.out.println("\nThe first " + n + " odd natural numbers are:");
+
+        // Loop to print odd numbers and calculate sum
+        for (int i = 1; i &lt;= n; i++) {
+            int odd = 2 * i - 1;
+            System.out.println(odd);
+            sum += odd;
+        }
+
+        System.out.println("\nSum of first " + n + " odd natural numbers = " + sum);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of terms: 5
+
+The first 5 odd natural numbers are:
+1
+3
+5
+7
+9
+
+Sum of first 5 odd natural numbers = 25
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

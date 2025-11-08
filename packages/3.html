@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.
+           </h4>
+<pre>
+  // File: InheritedDateExample.java
+
+// Step 1: Import the Date class from java.util package
+import java.util.Date;
+
+// Step 2: Create a subclass that inherits Date
+class MyDate extends Date {
+    // You can add custom behavior if needed
+    public void displayDate() {
+        // 'this' refers to the current Date object
+        System.out.println("Current system date and time: " + this);
+    }
+}
+
+// Step 3: Main class to test inheritance
+public class InheritedDateExample {
+    public static void main(String[] args) {
+        // Create an object of MyDate (which inherits from Date)
+        MyDate current = new MyDate();
+
+        // Display the current system date
+        current.displayDate();
+    }
+}  
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Current system date and time: Mon Oct 20 19:50:45 IST 2025
+                    
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

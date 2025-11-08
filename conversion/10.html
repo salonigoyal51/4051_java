@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //How to convert Date to String
+           </h4>
+<pre>
+   import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateToStringExample {
+    public static void main(String[] args) {
+        // Create a Date object (current date and time)
+        Date date = new Date();
+
+        // Define desired date format
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+        // Convert Date to String
+        String strDate = formatter.format(date);
+
+        System.out.println("Date value: " + date);
+        System.out.println("String value: " + strDate);
+    }
+}              
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   
+ Date value: Fri Oct 17 19:55:00 IST 2025
+String value: 17/10/2025     
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

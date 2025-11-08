@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.
+           </h4>
+<pre>   
+   import java.util.Scanner;
+import java.util.Arrays;
+
+public class ConsecutiveChecker {
+
+    // Method to check if three integers are consecutive
+    static boolean areConsecutive(int a, int b, int c) {
+        // Store numbers in an array
+        int[] nums = {a, b, c};
+        // Sort the array
+        Arrays.sort(nums);
+
+        // Check if the differences are exactly 1
+        return (nums[1] - nums[0] == 1) && (nums[2] - nums[1] == 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first integer: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second integer: ");
+        int num2 = sc.nextInt();
+
+        System.out.print("Enter third integer: ");
+        int num3 = sc.nextInt();
+
+        if (areConsecutive(num1, num2, num3)) {
+            System.out.println("The numbers are consecutive.");
+        } else {
+            System.out.println("The numbers are not consecutive.");
+        }
+
+        sc.close();
+    }
+}
+        
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter first integer: 5
+Enter second integer: 6
+Enter third integer: 7
+The numbers are consecutive.
+Enter first integer: 10
+Enter second integer: 12
+Enter third integer: 11
+The numbers are consecutive.
+Enter first integer: 3
+Enter second integer: 5
+Enter third integer: 7
+The numbers are not consecutive. 
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

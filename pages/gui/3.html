@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+//Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).  
+           </h4>
+<pre>
+  import java.awt.*;
+import java.awt.event.*;
+
+public class BorderLayoutButtonsExample extends Frame {
+
+    // Constructor
+    BorderLayoutButtonsExample() {
+        // Set BorderLayout manager
+        setLayout(new BorderLayout(5, 5)); // 5px horizontal & vertical gaps
+
+        // Create buttons
+        Button btnNorth = new Button("North");
+        Button btnSouth = new Button("South");
+        Button btnEast  = new Button("East");
+        Button btnWest  = new Button("West");
+        Button btnCenter = new Button("Center");
+
+        // Add buttons to frame with BorderLayout positions
+        add(btnNorth, BorderLayout.NORTH);
+        add(btnSouth, BorderLayout.SOUTH);
+        add(btnEast,  BorderLayout.EAST);
+        add(btnWest,  BorderLayout.WEST);
+        add(btnCenter, BorderLayout.CENTER);
+
+        // Frame settings
+        setTitle("BorderLayout Buttons Example");
+        setSize(400, 300);
+        setVisible(true);
+
+        // Close window properly
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new BorderLayoutButtonsExample();
+    }
+}     
+    
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  -------------------------------
+|            North             |
+|-------------------------------|
+| West |         Center       | East |
+|      |                      |     |
+|      |                      |     |
+|-------------------------------|
+|            South             |
+ -------------------------------
+  
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

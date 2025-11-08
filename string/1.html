@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //Program to Check if a String contains only digits 
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class CheckDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input a string from user
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        boolean onlyDigits = true;
+
+        // Check each character
+        for (int i = 0; i < input.length(); i++) {
+            if (!Character.isDigit(input.charAt(i))) {
+                onlyDigits = false;
+                break;
+            }
+        }
+
+        // Display result
+        if (onlyDigits) {
+            System.out.println("The string contains only digits.");
+        } else {
+            System.out.println("The string contains characters other than digits.");
+        }
+
+        sc.close();
+    }
+}
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+       Enter a string: 123456
+The string contains only digits.
+              Enter a string: 123abc
+The string contains characters other than digits.
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //read a file and throws an exception if the file is empty.
+           </h4>
+<pre> 
+    import java.io.*;
+
+// Custom exception class
+class EmptyFileException extends Exception {
+    EmptyFileException(String message) {
+        super(message);
+    }
+}
+
+public class EmptyFileChecker {
+
+    // Method to read a file
+    static void readFile(String filename) throws IOException, EmptyFileException {
+        File file = new File(filename);
+
+        if (!file.exists()) {
+            throw new FileNotFoundException("File " + filename + " does not exist.");
+        }
+
+        if (file.length() == 0) {
+            throw new EmptyFileException("File " + filename + " is empty.");
+        }
+
+        // Read and print file contents
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+        System.out.println("Contents of the file:");
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        br.close();
+    }
+
+    public static void main(String[] args) {
+        String filename = "example.txt"; // Replace with your file path
+
+        try {
+            readFile(filename);
+        } catch (EmptyFileException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } catch (FileNotFoundException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IOException caught: " + e.getMessage());
+        }
+
+        System.out.println("Program finished.");
+    }
+}
+       
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Exception caught: File example.txt is empty.
+Program finished.
+Contents of the file:
+Hello World
+This is a sample file.
+Program finished.
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

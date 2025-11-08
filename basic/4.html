@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //print the sum, multiply, subtract, divide and remainder of two numbers
+       
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two numbers from the user
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        // Perform operations
+        int sum = num1 + num2;
+        int difference = num1 - num2;
+        int product = num1 * num2;
+        int quotient = num1 / num2;
+        int remainder = num1 % num2;
+
+        // Display results
+        System.out.println("\nResults:");
+        System.out.println("Sum = " + sum);
+        System.out.println("Difference = " + difference);
+        System.out.println("Product = " + product);
+        System.out.println("Quotient = " + quotient);
+        System.out.println("Remainder = " + remainder);
+
+        sc.close();
+    }
+}          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter first number: 20
+Enter second number: 6
+
+Results:
+Sum = 26
+Difference = 14
+Product = 120
+Quotient = 3
+Remainder = 2
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

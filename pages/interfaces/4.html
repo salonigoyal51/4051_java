@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //Write a Java programming to create a banking system with three classes 
+           </h4>
+<pre>
+  // File: BankingSystem.java
+
+import java.util.*;
+
+// Step 1: Define the Account interface
+interface Account {
+    void deposit(double amount);
+    void withdraw(double amount);
+    void calculateInterest();
+    void viewBalance();
+}
+
+// Step 2: Create the SavingsAccount class
+class SavingsAccount implements Account {
+    private String accountNumber;
+    private double balance;
+    private double interestRate = 0.05; // 5% interest
+
+    public SavingsAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited ₹" + amount + " in Savings Account " + accountNumber);
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn ₹" + amount + " from Savings Account " + accountNumber);
+        } else {
+            System.out.println("Insufficient balance in Savings Account " + accountNumber);
+        }
+    }
+
+    @Override
+    public void calculateInterest() {
+        double interest = balance * interestRate;
+        balance += interest;
+        System.out.println("Interest of ₹" + interest + " added to Savings Account " + accountNumber);
+    }
+
+    @Override
+    public void viewBalance() {
+        System.out.println("Savings Account " + accountNumber + " Balance: ₹" + balance);
+    }
+
+    // Unique method for SavingsAccount
+    public void savingsInfo() {
+        System.out.println("Savings Account has 5% annual interest rate.");
+    }
+}
+
+// Step 3: Create the CurrentAccount class
+class CurrentAccount implements Account {
+    private String accountNumber;
+    private double balance;
+    private double overdraftLimit = 10000; // Example limit
+
+    public CurrentAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited ₹" + amount + " in Current Account " + accountNumber);
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (balance + overdraftLimit >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn ₹" + amount + " from Current Account " + accountNumber);
+        } else {
+            System.out.println("Overdraft limit exceeded for Current Account " + accountNumber);
+        }
+    }
+
+    @Override
+    public void calculateInterest() {
+        System.out.println("Current Account " + accountNumber + " has no interest.");
+    }
+
+    @Override
+    public void viewBalance() {
+        System.out.println("Current Account " + accountNumber + " Balance: ₹" + balance);
+    }
+
+    // Unique method for CurrentAccount
+    public void overdraftInfo() {
+        System.out.println("Current Account has an overdraft limit of ₹" + overdraftLimit);
+    }
+}
+
+// Step 4: Create the Bank class to manage accounts
+class Bank {
+    private List<Account> accounts = new ArrayList<>();
+
+    public void addAccount(Account acc) {
+        accounts.add(acc);
+        System.out.println("✅ Account added to the bank.");
+    }
+
+    public void showAllAccounts() {
+        System.out.println("\n--- All Accounts in the Bank ---");
+        for (Account acc : accounts) {
+            acc.viewBalance();
+        }
+    }
+}
+
+// Step 5: Main class to test the banking system
+public class BankingSystem {
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+
+        // Create different account types
+        SavingsAccount sa1 = new SavingsAccount("SAV101", 5000);
+        CurrentAccount ca1 = new CurrentAccount("CUR201", 10000);
+
+        // Add accounts to the bank
+        bank.addAccount(sa1);
+        bank.addAccount(ca1);
+
+        // Perform operations
+        sa1.deposit(2000);
+        sa1.calculateInterest();
+        sa1.withdraw(1500);
+        sa1.viewBalance();
+        sa1.savingsInfo();
+
+        System.out.println();
+
+        ca1.deposit(5000);
+        ca1.withdraw(18000);
+        ca1.calculateInterest();
+        ca1.viewBalance();
+        ca1.overdraftInfo();
+
+        System.out.println();
+        bank.showAllAccounts();
+    }
+}    
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  ✅ Account added to the bank.
+✅ Account added to the bank.
+Deposited ₹2000.0 in Savings Account SAV101
+Interest of ₹350.0 added to Savings Account SAV101
+Withdrawn ₹1500.0 from Savings Account SAV101
+Savings Account SAV101 Balance: ₹5850.0
+Savings Account has 5% annual interest rate.
+
+Deposited ₹5000.0 in Current Account CUR201
+Withdrawn ₹18000.0 from Current Account CUR201
+Current Account CUR201 has no interest.
+Current Account CUR201 Balance: ₹-3000.0
+Current Account has an overdraft limit of ₹10000.0
+
+--- All Accounts in the Bank ---
+Savings Account SAV101 Balance: ₹5850.0
+Current Account CUR201 Balance: ₹-3000.0                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

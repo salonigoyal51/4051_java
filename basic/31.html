@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program to find area of rhombus
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class AreaOfRhombus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input diagonals
+        System.out.print("Enter the length of the first diagonal (d1): ");
+        double d1 = sc.nextDouble();
+
+        System.out.print("Enter the length of the second diagonal (d2): ");
+        double d2 = sc.nextDouble();
+
+        // Calculate area
+        double area = (d1 * d2) / 2;
+
+        // Display result
+        System.out.println("Area of the rhombus = " + area);
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the length of the first diagonal (d1): 10
+Enter the length of the second diagonal (d2): 8
+Area of the rhombus = 40.0
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

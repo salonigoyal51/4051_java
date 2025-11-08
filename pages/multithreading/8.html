@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create multiple threads by using Runnbale interface 
+           </h4>
+<pre>     
+    // File: RunnableExample.java
+
+// Step 1: Create a class that implements Runnable
+class MyTask implements Runnable {
+    private String taskName;
+
+    public MyTask(String taskName) {
+        this.taskName = taskName;
+    }
+
+    // Step 2: Override the run() method
+    @Override
+    public void run() {
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.println(taskName + " - Step " + i + " is running in " + Thread.currentThread().getName());
+            try {
+                Thread.sleep(500); // simulate work by pausing for 0.5 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(taskName + " completed by " + Thread.currentThread().getName());
+    }
+}
+
+// Step 3: Main class
+public class RunnableExample {
+    public static void main(String[] args) {
+        // Create Runnable objects (tasks)
+        MyTask task1 = new MyTask("Task A");
+        MyTask task2 = new MyTask("Task B");
+        MyTask task3 = new MyTask("Task C");
+
+        // Step 4: Create Thread objects and attach Runnable tasks
+        Thread t1 = new Thread(task1, "Thread-1");
+        Thread t2 = new Thread(task2, "Thread-2");
+        Thread t3 = new Thread(task3, "Thread-3");
+
+        // Step 5: Start all threads
+        t1.start();
+        t2.start();
+        t3.start();
+
+        // Step 6: Wait for all threads to finish
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\n✅ All tasks completed!");
+    }
+}
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Task A - Step 1 is running in Thread-1
+Task B - Step 1 is running in Thread-2
+Task C - Step 1 is running in Thread-3
+Task A - Step 2 is running in Thread-1
+Task B - Step 2 is running in Thread-2
+Task C - Step 2 is running in Thread-3
+...
+Task A completed by Thread-1
+Task B completed by Thread-2
+Task C completed by Thread-3
+
+✅ All tasks completed!                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

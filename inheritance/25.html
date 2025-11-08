@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class Bird with abstract methods fly() and makeSound(). 
+            </h4>
+ <pre>
+   // Abstract class
+abstract class Bird {
+    // Abstract methods (no body)
+    abstract void fly();
+    abstract void makeSound();
+}
+
+// Subclass 1
+class Eagle extends Bird {
+    void fly() {
+        System.out.println("Eagle flies high in the sky.");
+    }
+
+    void makeSound() {
+        System.out.println("Eagle makes a loud screeching sound.");
+    }
+}
+
+// Subclass 2
+class Hawk extends Bird {
+    void fly() {
+        System.out.println("Hawk soars gracefully through the air.");
+    }
+
+    void makeSound() {
+        System.out.println("Hawk makes a sharp 'kreee' sound.");
+    }
+}
+
+// Main class
+public class BirdTest {
+    public static void main(String[] args) {
+        // Create objects of subclasses
+        Bird eagle = new Eagle();
+        Bird hawk = new Hawk();
+
+        // Call methods
+        System.out.println("Eagle:");
+        eagle.fly();
+        eagle.makeSound();
+
+        System.out.println("\nHawk:");
+        hawk.fly();
+        hawk.makeSound();
+    }
+}              
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+    Eagle:
+Eagle flies high in the sky.
+Eagle makes a loud screeching sound.
+
+Hawk:
+Hawk soars gracefully through the air.
+Hawk makes a sharp 'kreee' sound.
+
+   
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

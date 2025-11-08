@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SegregateZerosOnes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements (only 0s and 1s):");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Segregate 0s and 1s
+        int left = 0, right = n - 1;
+        while (left &lt; right) {
+            while (arr[left] == 0 && left &lt; right)
+                left++;
+            while (arr[right] == 1 && left &lt; right)
+                right--;
+            if (left &lt; right) {
+                arr[left] = 0;
+                arr[right] = 1;
+                left++;
+                right--;
+            }
+        }
+
+        // Display result
+        System.out.print("Array after segregation: ");
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        sc.close();
+    }
+}       
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements: 8
+Enter 8 elements (only 0s and 1s):
+0 1 0 1 1 0 0 1
+Array after segregation: 0 0 0 0 1 1 1 1
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

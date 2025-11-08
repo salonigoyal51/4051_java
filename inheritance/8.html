@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //Write a Java program to create a class called Shape with methods called getPerimeter() and getArea(). 
+            </h4>
+ <pre>
+   // Base class
+class Shape {
+    // Method to get perimeter
+    double getPerimeter() {
+        System.out.println("Perimeter not defined for generic shape");
+        return 0;
+    }
+
+    // Method to get area
+    double getArea() {
+        System.out.println("Area not defined for generic shape");
+        return 0;
+    }
+}
+
+// Subclass
+class Circle extends Shape {
+    double radius;
+
+    // Constructor
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Override getPerimeter() method
+    @Override
+    double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
+    // Override getArea() method
+    @Override
+    double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Main class to test the program
+public class ShapeExample {
+    public static void main(String[] args) {
+        // Create a Circle object
+        Circle c = new Circle(5.0);
+
+        // Display area and perimeter
+        System.out.println("Radius of Circle: " + c.radius);
+        System.out.println("Perimeter of Circle: " + c.getPerimeter());
+        System.out.println("Area of Circle: " + c.getArea());
+    }
+}        
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+    Radius of Circle: 5.0
+Perimeter of Circle: 31.41592653589793
+Area of Circle: 78.53981633974483  
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

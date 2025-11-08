@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+//Print odd and even numbers from array
+           </h4>
+<pre>
+import java.util.Scanner;
+
+public class OddEvenFromArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take size of array from user
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Take array elements as input
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Print even numbers
+        System.out.println("Even numbers in the array:");
+        for (int i = 0; i &lt; n; i++) {
+            if (arr[i] % 2 == 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+        // Print odd numbers
+        System.out.println("\nOdd numbers in the array:");
+        for (int i = 0; i &lt; n; i++) {
+            if (arr[i] % 2 != 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the number of elements in the array: 6
+Enter 6 elements:
+12
+7
+9
+24
+45
+66
+Even numbers in the array:
+12 24 66 
+Odd numbers in the array:
+7 9 45   
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

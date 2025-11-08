@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+         //program that takes two numbers and display the product of two numbers          
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class ProductOfTwoNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two numbers from the user
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        // Calculate product
+        int product = num1 * num2;
+
+        // Display result
+        System.out.println("The product of " + num1 + " and " + num2 + " is: " + product);
+
+        sc.close();
+    }
+}            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Enter first number: 8
+Enter second number: 6
+The product of 8 and 6 is: 48
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

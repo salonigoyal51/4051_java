@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class BankAccount with abstract methods deposit() and withdraw().
+            </h4>
+ <pre>     
+      // Abstract base class
+abstract class BankAccount {
+    String accountHolder;
+    double balance;
+
+    // Constructor
+    BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    // Abstract methods
+    abstract void deposit(double amount);
+    abstract void withdraw(double amount);
+
+    // Concrete method (common to all accounts)
+    void displayBalance() {
+        System.out.println(accountHolder + "'s Account Balance: ₹" + balance);
+    }
+}
+
+// Subclass: SavingsAccount
+class SavingsAccount extends BankAccount {
+    private static final double MIN_BALANCE = 1000;
+
+    // Constructor
+    SavingsAccount(String accountHolder, double balance) {
+        super(accountHolder, balance);
+    }
+
+    @Override
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited ₹" + amount + " into Savings Account.");
+    }
+
+    @Override
+    void withdraw(double amount) {
+        if (balance - amount >= MIN_BALANCE) {
+            balance -= amount;
+            System.out.println("Withdrawn ₹" + amount + " from Savings Account.");
+        } else {
+            System.out.println("Withdrawal denied! Minimum balance of ₹" + MIN_BALANCE + " must be maintained.");
+        }
+    }
+}
+
+// Subclass: CurrentAccount
+class CurrentAccount extends BankAccount {
+    private static final double OVERDRAFT_LIMIT = 5000;
+
+    // Constructor
+    CurrentAccount(String accountHolder, double balance) {
+        super(accountHolder, balance);
+    }
+
+    @Override
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited ₹" + amount + " into Current Account.");
+    }
+
+    @Override
+    void withdraw(double amount) {
+        if (balance - amount >= -OVERDRAFT_LIMIT) {
+            balance -= amount;
+            System.out.println("Withdrawn ₹" + amount + " from Current Account.");
+        } else {
+            System.out.println("Withdrawal denied! Overdraft limit of ₹" + OVERDRAFT_LIMIT + " exceeded.");
+        }
+    }
+}
+
+// Main class
+public class AbstractBankExample {
+    public static void main(String[] args) {
+        // Create Savings Account
+        BankAccount savings = new SavingsAccount("Ananya Sharma", 5000);
+        System.out.println("---- Savings Account ----");
+        savings.displayBalance();
+        savings.deposit(2000);
+        savings.withdraw(3000);
+        savings.withdraw(4000);
+        savings.displayBalance();
+
+        System.out.println();
+
+        // Create Current Account
+        BankAccount current = new CurrentAccount("Ravi Kumar", 2000);
+        System.out.println("---- Current Account ----");
+        current.displayBalance();
+        current.deposit(3000);
+        current.withdraw(6000);
+        current.withdraw(2000);
+        current.displayBalance();
+    }
+}  
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+    ---- Savings Account ----
+Ananya Sharma's Account Balance: ₹5000.0
+Deposited ₹2000.0 into Savings Account.
+Withdrawn ₹3000.0 from Savings Account.
+Withdrawal denied! Minimum balance of ₹1000.0 must be maintained.
+Ananya Sharma's Account Balance: ₹4000.0
+
+---- Current Account ----
+Ravi Kumar's Account Balance: ₹2000.0
+Deposited ₹3000.0 into Current Account.
+Withdrawn ₹6000.0 from Current Account.
+Withdrawal denied! Overdraft limit of ₹5000.0 exceeded.
+Ravi Kumar's Account Balance: ₹-1000.0  
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

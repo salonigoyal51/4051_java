@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to check whether a string is a Palindrome 
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string from user
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        // Remove spaces and convert to lowercase for uniform check
+        String cleanStr = str.replaceAll("\\s", "").toLowerCase();
+
+        // Check palindrome
+        String reversedStr = new StringBuilder(cleanStr).reverse().toString();
+
+        if (cleanStr.equals(reversedStr)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+
+        sc.close();
+    }
+}
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Enter a string: madam
+The string is a palindrome.
+Enter a string: Hello
+The string is not a palindrome.    
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

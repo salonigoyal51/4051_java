@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to compute the sum of the digits in an integer
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SumOfDigits {
+
+    // Method to compute the sum of digits
+    public static int sumDigits(int num) {
+        int sum = 0;
+
+        // Extract each digit and add to sum
+        while (num != 0) {
+            sum += num % 10; // get last digit
+            num /= 10;       // remove last digit
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number
+        System.out.print("Enter an integer: ");
+        int number = sc.nextInt();
+
+        // Call method and display result
+        int result = sumDigits(number);
+        System.out.println("Sum of digits of " + number + " = " + result);
+
+        sc.close();
+    }
+}  
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter an integer: 12345
+Sum of digits of 12345 = 15
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

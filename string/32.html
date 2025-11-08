@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Insert a string into another string 
+
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class InsertString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input the original string
+        System.out.print("Enter the original string: ");
+        String original = sc.nextLine();
+
+        // Input the string to insert
+        System.out.print("Enter the string to insert: ");
+        String toInsert = sc.nextLine();
+
+        // Input the position where to insert
+        System.out.print("Enter the position to insert at (0-based index): ");
+        int position = sc.nextInt();
+
+        // Check if position is valid
+        if (position &lt; 0 || position > original.length()) {
+            System.out.println("Invalid position! Position should be between 0 and " + original.length());
+        } else {
+            // Use StringBuilder to insert
+            StringBuilder sb = new StringBuilder(original);
+            sb.insert(position, toInsert);
+
+            System.out.println("Resulting string: " + sb.toString());
+        }
+
+        sc.close();
+    }
+}
+
+
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    
+Enter the original string: HelloWorld
+Enter the string to insert: Java
+Enter the position to insert at (0-based index): 5
+Resulting string: HelloJavaWorld
+Enter the original string: ABCD
+Enter the string to insert: XYZ
+Enter the position to insert at (0-based index): 2
+Resulting string: ABXYZCD
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

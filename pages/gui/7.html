@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+  //Create a simple AWT application that displays a Checkbox with Custom Layout.
+           </h4>
+<pre>
+    import java.awt.*;
+import java.awt.event.*;
+
+public class CustomLayoutCheckboxExample extends Frame implements ItemListener {
+
+    Checkbox cb;
+    Label resultLbl;
+
+    // Constructor
+    CustomLayoutCheckboxExample() {
+        // Disable layout manager — use absolute positioning
+        setLayout(null);
+
+        // Create Checkbox
+        cb = new Checkbox("I agree");
+        cb.setBounds(50, 50, 100, 30); // x, y, width, height
+        cb.addItemListener(this);
+
+        // Label to display checkbox state
+        resultLbl = new Label("Checkbox is unchecked");
+        resultLbl.setBounds(50, 100, 200, 30);
+
+        // Add components to frame
+        add(cb);
+        add(resultLbl);
+
+        // Frame settings
+        setTitle("Custom Layout Checkbox Example");
+        setSize(300, 200);
+        setVisible(true);
+
+        // Close window properly
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Handle checkbox state change
+    public void itemStateChanged(ItemEvent e) {
+        if (cb.getState()) {
+            resultLbl.setText("Checkbox is checked");
+        } else {
+            resultLbl.setText("Checkbox is unchecked");
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new CustomLayoutCheckboxExample();
+    }
+}
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  -------------------------------
+| Custom Layout Checkbox Example |
+|-------------------------------|
+| [ ] I agree                   |
+| Checkbox is unchecked         |
+ -------------------------------
+   
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

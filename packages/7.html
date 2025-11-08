@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              // Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.
+           </h4>
+<pre>
+ // File: Emp.java
+package employee;
+
+import java.util.Scanner;
+
+public class Emp {
+    // Step 1: Declare employee variables
+    String name, category;
+    int empid;
+    double bpay, hra, da, allowance, pf, grosspay, incometax, npay;
+
+    // Step 2: Method to read employee details
+    public void getEmployeeDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Employee ID: ");
+        empid = sc.nextInt();
+
+        sc.nextLine(); // consume newline
+        System.out.print("Enter Employee Category: ");
+        category = sc.nextLine();
+
+        System.out.print("Enter Basic Pay: ");
+        bpay = sc.nextDouble();
+    }
+
+    // Step 3: Method to calculate payroll
+    public void calculatePay() {
+        // Simple calculations
+        hra = 0.15 * bpay;        // 15% of basic
+        da = 0.10 * bpay;         // 10% of basic
+        allowance = 0.05 * bpay;  // 5% of basic
+        pf = 0.12 * bpay;         // 12% of basic
+
+        grosspay = bpay + hra + da + allowance;
+        incometax = 0.10 * grosspay; // 10% income tax
+        npay = grosspay - (pf + incometax);
+    }
+
+    // Step 4: Method to display payroll details
+    public void displayPaySlip() {
+        System.out.println("\n===== Employee Payroll Slip =====");
+        System.out.println("Employee ID      : " + empid);
+        System.out.println("Employee Name    : " + name);
+        System.out.println("Category         : " + category);
+        System.out.println("----------------------------------");
+        System.out.println("Basic Pay        : " + bpay);
+        System.out.println("HRA (15%)        : " + hra);
+        System.out.println("DA (10%)         : " + da);
+        System.out.println("Allowance (5%)   : " + allowance);
+        System.out.println("PF (12%)         : " + pf);
+        System.out.println("----------------------------------");
+        System.out.println("Gross Pay        : " + grosspay);
+        System.out.println("Income Tax (10%) : " + incometax);
+        System.out.println("Net Pay          : " + npay);
+        System.out.println("==================================");
+    }
+}
+// File: Emppay.java
+
+import employee.Emp;  // Import the Emp class from employee package
+
+public class Emppay {
+    public static void main(String[] args) {
+        // Step 1: Create object of Emp class
+        Emp e = new Emp();
+
+        // Step 2: Call methods to perform payroll process
+        e.getEmployeeDetails();
+        e.calculatePay();
+        e.displayPaySlip();
+    }
+}
+ 
+      
+    
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter Employee Name: Anuradha
+Enter Employee ID: 102
+Enter Employee Category: Full-Time
+Enter Basic Pay: 40000
+
+===== Employee Payroll Slip =====
+Employee ID      : 102
+Employee Name    : Anuradha
+Category         : Full-Time
+----------------------------------
+Basic Pay        : 40000.0
+HRA (15%)        : 6000.0
+DA (10%)         : 4000.0
+Allowance (5%)   : 2000.0
+PF (12%)         : 4800.0
+----------------------------------
+Gross Pay        : 52000.0
+Income Tax (10%) : 5200.0
+Net Pay          : 41999.99999999999
+==================================
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

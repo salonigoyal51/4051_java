@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //print multiplication table of given number
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number
+        System.out.print("Enter a number to print its multiplication table: ");
+        int num = sc.nextInt();
+
+        System.out.println("\nMultiplication Table of " + num + ":");
+
+        // Loop to print table
+        for (int i = 1; i &lt;= 10; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a number to print its multiplication table: 7
+
+Multiplication Table of 7:
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

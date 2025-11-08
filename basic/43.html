@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to sum of N numbers
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SumOfNNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number count
+        System.out.print("Enter how many numbers you want to add: ");
+        int n = sc.nextInt();
+
+        int sum = 0;
+
+        // Loop to input and add numbers
+        for (int i = 1; i &lt;= n; i++) {
+            System.out.print("Enter number " + i + ": ");
+            int num = sc.nextInt();
+            sum += num;
+        }
+
+        // Display the result
+        System.out.println("Sum of " + n + " numbers = " + sum);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter how many numbers you want to add: 5
+Enter number 1: 10
+Enter number 2: 20
+Enter number 3: 30
+Enter number 4: 40
+Enter number 5: 50
+Sum of 5 numbers = 150
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

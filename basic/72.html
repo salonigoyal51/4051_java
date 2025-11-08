@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Write a Java program to trim a string(remove whitespaces)
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class TrimStringExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string
+        System.out.print("Enter a string with spaces: ");
+        String str = sc.nextLine();
+
+        // Trim the string
+        String trimmedStr = str.trim();
+
+        // Display results
+        System.out.println("Original String: [" + str + "]");
+        System.out.println("Trimmed String: [" + trimmedStr + "]");
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a string with spaces:     Hello Java World     
+Original String: [    Hello Java World     ]
+Trimmed String: [Hello Java World]
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

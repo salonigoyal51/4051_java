@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //find the sum of each row and each column of a matrix
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class SumOfRowsAndColumns {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        // Input matrix elements
+        System.out.println("Enter elements of the matrix:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        // Display the matrix
+        System.out.println("\nThe Matrix is:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Find sum of each row
+        System.out.println("\nSum of each row:");
+        for (int i = 0; i &lt; rows; i++) {
+            int rowSum = 0;
+            for (int j = 0; j &lt; cols; j++) {
+                rowSum += matrix[i][j];
+            }
+            System.out.println("Row " + (i + 1) + ": " + rowSum);
+        }
+
+        // Find sum of each column
+        System.out.println("\nSum of each column:");
+        for (int j = 0; j &lt; cols; j++) {
+            int colSum = 0;
+            for (int i = 0; i &lt; rows; i++) {
+                colSum += matrix[i][j];
+            }
+            System.out.println("Column " + (j + 1) + ": " + colSum);
+        }
+
+        sc.close();
+    }
+}          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter number of rows: 3
+Enter number of columns: 3
+Enter elements of the matrix:
+1 2 3
+4 5 6
+7 8 9
+
+The Matrix is:
+1 2 3
+4 5 6
+7 8 9
+
+Sum of each row:
+Row 1: 6
+Row 2: 15
+Row 3: 24
+
+Sum of each column:
+Column 1: 12
+Column 2: 15
+Column 3: 18   
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

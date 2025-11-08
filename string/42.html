@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //swap two string variables without using third or temp variable.
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class SwapStrings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two strings
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+
+        System.out.println("\nBefore swapping:");
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+
+        // Swap without using a third variable
+        str1 = str1 + str2; // concatenate both strings
+        str2 = str1.substring(0, str1.length() - str2.length()); // extract original str1
+        str1 = str1.substring(str2.length()); // extract original str2
+
+        System.out.println("\nAfter swapping:");
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+
+        sc.close();
+    }
+}
+
+
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    
+Enter first string: Hello
+Enter second string: World
+
+Before swapping:
+String 1: Hello
+String 2: World
+
+After swapping:
+String 1: World
+String 2: Hello
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

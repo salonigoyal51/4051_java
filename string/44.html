@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                // Read two String user input and check if first contains second
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class CheckStringContains {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two strings
+        System.out.print("Enter the first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.print("Enter the second string: ");
+        String str2 = sc.nextLine();
+
+        // Check if the first string contains the second string
+        if (str1.contains(str2)) {
+            System.out.println("The first string contains the second string.");
+        } else {
+            System.out.println("The first string does NOT contain the second string.");
+        }
+
+        sc.close();
+    }
+}
+
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    
+Enter the first string: Hello World
+Enter the second string: World
+The first string contains the second string.
+Enter the first string: Java Programming
+Enter the second string: Python
+The first string does NOT contain the second string.
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program that prompts the user to input an integer and then outputs the number with the digits reversed order
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input an integer
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+
+        int reversed = 0;
+        int remainder;
+        int original = num;
+
+        // Reverse the digits using loop
+        while (num != 0) {
+            remainder = num % 10;         // get last digit
+            reversed = reversed * 10 + remainder; // build reversed number
+            num = num / 10;               // remove last digit
+        }
+
+        System.out.println("The number " + original + " reversed is: " + reversed);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter an integer: 12345
+The number 12345 reversed is: 54321
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

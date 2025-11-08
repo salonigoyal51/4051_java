@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to find the smallest number among three numbers
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SmallestNumber {
+
+    // Method to find the smallest number
+    public static int findSmallest(int a, int b, int c) {
+        if (a &lt;= b && a &lt;= c) {
+            return a;
+        } else if (b &lt;= a && b &lt;= c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input three numbers
+        System.out.print("Enter the first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+
+        System.out.print("Enter the third number: ");
+        int num3 = sc.nextInt();
+
+        // Call the method and display result
+        int smallest = findSmallest(num1, num2, num3);
+        System.out.println("The smallest number is: " + smallest);
+
+        sc.close();
+    }
+}
+          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the first number: 12
+Enter the second number: 5
+Enter the third number: 9
+The smallest number is: 5
+
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

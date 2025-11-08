@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //program to compare two numbers
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CompareTwoNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two numbers
+        System.out.print("Enter the first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+
+        // Compare the two numbers
+        if (num1 &gt; num2) {
+            System.out.println(num1 + " is greater than " + num2);
+        } else if (num1 &lt; num2) {
+            System.out.println(num1 + " is smaller than " + num2);
+        } else {
+            System.out.println(num1 + " and " + num2 + " are equal.");
+        }
+
+        sc.close();
+    }
+}
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter the first number: 25
+Enter the second number: 40
+25 is smaller than 40
+Enter the first number: 100
+Enter the second number: 100
+100 and 100 are equal.
+  
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>
