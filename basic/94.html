@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //find second lowest number from the array
+           </h4>
+<pre>
+  import java.util.Scanner;
+import java.util.Arrays;
+
+public class SecondLowest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        if (n &lt; 2) {
+            System.out.println("Array should contain at least two elements.");
+            return;
+        }
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " integers:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Sort the array
+        Arrays.sort(arr);
+
+        // Find the second lowest (smallest unique) number
+        int secondLowest = -1;
+        for (int i = 1; i &lt; n; i++) {
+            if (arr[i] != arr[0]) {
+                secondLowest = arr[i];
+                break;
+            }
+        }
+
+        if (secondLowest == -1)
+            System.out.println("All elements are the same.");
+        else
+            System.out.println("The second lowest number is: " + secondLowest);
+
+        sc.close();
+    }
+}           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements: 6
+Enter 6 integers:
+8 3 5 1 9 1
+The second lowest number is: 3
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

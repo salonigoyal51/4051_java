@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to input 5 numbers from keyboard and find their sum and average
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SumAndAverage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int sum = 0;
+        double average;
+        int number;
+
+        // Input 5 numbers and calculate sum
+        System.out.println("Enter 5 numbers:");
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.print("Number " + i + ": ");
+            number = sc.nextInt();
+            sum += number;
+        }
+
+        // Calculate average
+        average = sum / 5.0;
+
+        // Display results
+        System.out.println("\nSum of 5 numbers = " + sum);
+        System.out.println("Average of 5 numbers = " + average);
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter 5 numbers:
+Number 1: 10
+Number 2: 20
+Number 3: 30
+Number 4: 40
+Number 5: 50
+
+Sum of 5 numbers = 150
+Average of 5 numbers = 30.0
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

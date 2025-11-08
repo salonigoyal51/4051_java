@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Create a Button and Display Image in the Frame when Clicked  
+           </h4>
+<pre>
+import java.awt.*;
+import java.awt.event.*;
+
+public class ImageButtonExample extends Frame implements ActionListener {
+
+    Button showImageButton;
+    Label imageLabel;
+
+    public ImageButtonExample() {
+        // Frame title
+        super("Button Click to Display Image");
+
+        // Layout
+        setLayout(new FlowLayout());
+
+        // Button
+        showImageButton = new Button("Show Image");
+        add(showImageButton);
+
+        // Label to hold image
+        imageLabel = new Label();
+        add(imageLabel);
+
+        // Register event listener (delegation event model)
+        showImageButton.addActionListener(this);
+
+        // Frame properties
+        setSize(400, 400);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Event handling
+    public void actionPerformed(ActionEvent e) {
+        // Load and display image
+        Image img = Toolkit.getDefaultToolkit().getImage("example.jpg"); // Replace with your image file path
+        Image scaledImg = img.getScaledInstance(300, 300, Image.SCALE_SMOOTH); // Resize image
+        imageLabel.setIcon(new ImageIcon(scaledImg));
+        repaint();
+    }
+
+    public static void main(String[] args) {
+        new ImageButtonExample();
+    }
+}
+
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Initial Frame:
+
+[Button] Show Image
+[Label] (empty)
+
+
+After clicking “Show Image”:
+
+[Button] Show Image
+[Label] (image displayed here)
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Create the connection with MySQL Database and manage the driver   
+           </h4>
+<pre>
+  import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MySQLConnectionExample {
+    public static void main(String[] args) {
+        // JDBC URL for MySQL
+        String url = "jdbc:mysql://localhost:3306/testdb"; // your DB name
+        String user = "root"; // your MySQL username
+        String password = "1234"; // your MySQL password
+
+        Connection conn = null;
+
+        try {
+            // 1. Load the MySQL JDBC Driver (optional for newer versions)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver Loaded Successfully!");
+
+            // 2. Establish the connection
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Connection Established Successfully!");
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("❌ MySQL JDBC Driver not found!");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("❌ Database connection failed!");
+            e.printStackTrace();
+        } finally {
+            // 3. Close the connection
+            try {
+                if (conn != null && !conn.isClosed()) {
+                    conn.close();
+                    System.out.println("🔒 Connection Closed.");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}       
+        
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Driver Loaded Successfully!
+✅ Connection Established Successfully!
+🔒 Connection Closed. 
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

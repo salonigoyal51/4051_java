@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to cyclically rotate a given array clockwise by one
+           </h4>
+<pre>
+   
+     import java.util.Scanner;
+
+public class RotateArrayClockwise {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Store the last element
+        int last = arr[n - 1];
+
+        // Shift all elements one position to the right
+        for (int i = n - 1; i &gt; 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+
+        // Move the last element to the first position
+        arr[0] = last;
+
+        // Display rotated array
+        System.out.println("\nArray after clockwise rotation by one:");
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements in the array: 5
+Enter 5 elements:
+10
+20
+30
+40
+50
+
+Array after clockwise rotation by one:
+50 10 20 30 40
+
+
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

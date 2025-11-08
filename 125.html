@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //check whether an year entered by the user is a leap year or not
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class LeapYearCheck {
+
+    // Method to check leap year
+    public static boolean isLeapYear(int year) {
+        // A year is a leap year if:
+        // 1. It is divisible by 4, and
+        // 2. (It is not divisible by 100 unless it is also divisible by 400)
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input year from user
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+
+        // Check and display result
+        if (isLeapYear(year)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+
+        sc.close();
+    }
+}
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter a year: 2024
+2024 is a leap year.
+Enter a year: 1900
+1900 is not a leap year.
+Enter a year: 2000
+2000 is a leap year.
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

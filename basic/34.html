@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program to find volume of sphere
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class VolumeOfSphere {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input radius
+        System.out.print("Enter the radius of the sphere: ");
+        double radius = sc.nextDouble();
+
+        // Calculate volume using formula: (4/3) × π × r³
+        double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+
+        // Display result
+        System.out.println("Volume of the sphere = " + volume);
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Enter the radius of the sphere: 5
+Volume of the sphere = 523.5987755982989
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

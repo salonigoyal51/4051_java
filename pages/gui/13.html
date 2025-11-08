@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Create a simple AWT application that displays a CheckboxGroup with Custom Layout.
+           </h4>
+<pre>
+ import java.awt.*;
+import java.awt.event.*;
+
+public class CustomLayoutCheckboxGroupExample extends Frame implements ActionListener {
+
+    Label lbl, resultLbl;
+    CheckboxGroup genderGroup;
+    Checkbox male, female, other;
+    Button showBtn;
+
+    // Constructor
+    CustomLayoutCheckboxGroupExample() {
+        // Disable default layout manager — use manual positioning
+        setLayout(null);
+
+        // Label
+        lbl = new Label("Select your gender:");
+        lbl.setBounds(50, 50, 150, 30);
+
+        // Checkbox group (radio button behavior)
+        genderGroup = new CheckboxGroup();
+        male = new Checkbox("Male", genderGroup, false);
+        male.setBounds(50, 90, 100, 30);
+
+        female = new Checkbox("Female", genderGroup, false);
+        female.setBounds(50, 120, 100, 30);
+
+        other = new Checkbox("Other", genderGroup, false);
+        other.setBounds(50, 150, 100, 30);
+
+        // Button
+        showBtn = new Button("Show Selection");
+        showBtn.setBounds(50, 200, 120, 30);
+        showBtn.addActionListener(this);
+
+        // Label to display result
+        resultLbl = new Label("Selected: ");
+        resultLbl.setBounds(50, 240, 200, 30);
+
+        // Add components to the frame
+        add(lbl);
+        add(male);
+        add(female);
+        add(other);
+        add(showBtn);
+        add(resultLbl);
+
+        // Frame settings
+        setTitle("Custom Layout CheckboxGroup Example");
+        setSize(300, 350);
+        setVisible(true);
+
+        // Close the window properly
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Handle button click
+    public void actionPerformed(ActionEvent e) {
+        Checkbox selected = genderGroup.getSelectedCheckbox();
+        if (selected != null) {
+            resultLbl.setText("Selected: " + selected.getLabel());
+        } else {
+            resultLbl.setText("No selection made!");
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new CustomLayoutCheckboxGroupExample();
+    }
+}  
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  --------------------------------------------
+| Custom Layout CheckboxGroup Example        |
+|--------------------------------------------|
+| Select your gender:                        |
+| ( ) Male                                   |
+| ( ) Female                                 |
+| ( ) Other                                  |
+| [ Show Selection ]                         |
+| Selected: (Displays chosen option)         |
+ --------------------------------------------
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

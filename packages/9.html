@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //Create a nested package i.e. c4.sample with public class and protected members to be accessed in another class. 
+           </h4>
+<pre>
+ // File: Data.java
+package c4.sample;
+
+public class Data {
+    // Protected members
+    protected String message = "Hello from protected member!";
+    protected int number = 42;
+
+    // Protected method
+    protected void displayData() {
+        System.out.println("Message: " + message);
+        System.out.println("Number: " + number);
+    }
+}
+// File: AccessNested.java
+import c4.sample.Data;  // Import the nested package class
+
+// Subclass of Data to access protected members
+class DerivedData extends Data {
+    public void showInfo() {
+        System.out.println("=== Accessing Protected Members from Subclass ===");
+        // Accessing inherited protected fields and method
+        System.out.println("Message: " + message);
+        System.out.println("Number: " + number);
+        displayData(); // calling protected method
+    }
+}
+
+// Main class
+public class AccessNested {
+    public static void main(String[] args) {
+        DerivedData obj = new DerivedData();
+        obj.showInfo();
+    }
+}
+ 
+      
+    
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  === Accessing Protected Members from Subclass ===
+Message: Hello from protected member!
+Number: 42
+Message: Hello from protected member!
+Number: 42
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

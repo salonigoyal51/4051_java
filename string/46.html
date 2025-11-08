@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Reverse String Word by Word 
+
+           </h4>
+<pre>
+  import java.util.Scanner;
+
+public class ReverseWords {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        // Split string into words
+        String[] words = str.split("\\s+");
+
+        System.out.println("String reversed word by word:");
+
+        // Print words in reverse order
+        for (int i = words.length - 1; i >= 0; i--) {
+            System.out.print(words[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a string: Java is fun
+String reversed word by word:
+fun is Java 
+Enter a string: Hello World from ChatGPT
+String reversed word by word:
+ChatGPT from World Hello 
+ 
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

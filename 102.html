@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program to Sort Names in an Alphabetical Order
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of names
+        System.out.print("Enter the number of names: ");
+        int n = sc.nextInt();
+        sc.nextLine(); // Consume newline
+
+        String[] names = new String[n];
+
+        // Input names
+        System.out.println("Enter the names:");
+        for (int i = 0; i &lt; n; i++) {
+            names[i] = sc.nextLine();
+        }
+
+        // Sort names alphabetically using bubble sort
+        for (int i = 0; i &lt; n - 1; i++) {
+            for (int j = i + 1; j &lt; n; j++) {
+                if (names[i].compareToIgnoreCase(names[j]) &gt; 0) {
+                    // Swap names
+                    String temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                }
+            }
+        }
+
+        // Display sorted names
+        System.out.println("\nNames in Alphabetical Order:");
+        for (int i = 0; i &lt; n; i++) {
+            System.out.println(names[i]);
+        }
+
+        sc.close();
+    }
+}
+          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter the number of names: 5
+Enter the names:
+Rahul
+Amit
+Sneha
+Kiran
+Deepa
+
+Names in Alphabetical Order:
+Amit
+Deepa
+Kiran
+Rahul
+Sneha
+  
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

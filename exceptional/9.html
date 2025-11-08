@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //manage the driver with path, username and password, if not successful then throw an exception
+           </h4>
+<pre>
+     import java.sql.*;
+import java.util.Scanner;
+
+public class DatabaseDriverManagerExample {
+
+    // Method to connect to the database
+    static Connection connectToDatabase(String dbUrl, String username, String password) throws Exception {
+        try {
+            // Load JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Attempt to connect
+            Connection conn = DriverManager.getConnection(dbUrl, username, password);
+            System.out.println("Database connected successfully.");
+            return conn;
+
+        } catch (ClassNotFoundException e) {
+            throw new Exception("JDBC Driver not found.", e);
+        } catch (SQLException e) {
+            throw new Exception("Failed to connect to the database. Check URL, username, and password.", e);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Database URL (e.g., jdbc:mysql://localhost:3306/testdb): ");
+        String dbUrl = sc.nextLine();
+
+        System.out.print("Enter Database Username: ");
+        String username = sc.nextLine();
+
+        System.out.print("Enter Database Password: ");
+        String password = sc.nextLine();
+
+        try {
+            Connection connection = connectToDatabase(dbUrl, username, password);
+
+            // Perform database operations here if needed
+
+            // Close connection
+            connection.close();
+            System.out.println("Connection closed.");
+
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        System.out.println("Program finished.");
+        sc.close();
+    }
+}   
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Enter Database URL: jdbc:mysql://localhost:3306/testdb
+Enter Database Username: root
+Enter Database Password: password
+Database connected successfully.
+Connection closed.
+Program finished.
+Enter Database URL: jdbc:mysql://localhost:3306/testdb
+Enter Database Username: wrongUser
+Enter Database Password: wrongPass
+Exception caught: Failed to connect to the database. Check URL, username, and password.
+java.lang.Exception: Failed to connect to the database. Check URL, username, and password.
+    at DatabaseDriverManagerExample.connectToDatabase(DatabaseDriverManagerExample.java:12)
+    ...
+Program finished.
+  
+   
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

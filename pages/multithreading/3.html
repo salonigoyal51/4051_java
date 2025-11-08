@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //program that sorts an array of integers using multiple threads
+           </h4>
+<pre>
+  
+  // File: MultiThreadSort.java
+
+import java.util.Arrays;
+
+class SortThread extends Thread {
+    private int[] arr;
+
+    public SortThread(int[] arr) {
+        this.arr = arr;
+    }
+
+    public void run() {
+        Arrays.sort(arr);  // Sort this part of the array
+        System.out.println(Thread.currentThread().getName() + " sorted: " + Arrays.toString(arr));
+    }
+
+    public int[] getArr() {
+        return arr;
+    }
+}
+
+public class MultiThreadSort {
+    // Merge two sorted arrays into one sorted array
+    public static int[] merge(int[] left, int[] right) {
+        int[] result = new int[left.length + right.length];
+        int i = 0, j = 0, k = 0;
+
+        while (i &lt; left.length && j &lt; right.length) {
+            if (left[i] &lt;= right[j]) {
+                result[k++] = left[i++];
+            } else {
+                result[k++] = right[j++];
+            }
+        }
+
+        while (i &lt; left.length) result[k++] = left[i++];
+        while (j &lt; right.length) result[k++] = right[j++];
+
+        return result;
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        int[] array = {9, 4, 7, 2, 10, 3, 1, 8, 6, 5};
+        System.out.println("Original Array: " + Arrays.toString(array));
+
+        // Split array into two halves
+        int mid = array.length / 2;
+        int[] leftPart = Arrays.copyOfRange(array, 0, mid);
+        int[] rightPart = Arrays.copyOfRange(array, mid, array.length);
+
+        // Create two sorting threads
+        SortThread t1 = new SortThread(leftPart);
+        SortThread t2 = new SortThread(rightPart);
+
+        // Start both threads
+        t1.start();
+        t2.start();
+
+        // Wait for both threads to complete
+        t1.join();
+        t2.join();
+
+        // Merge both sorted halves
+        int[] sortedArray = merge(t1.getArr(), t2.getArr());
+        System.out.println("Final Sorted Array: " + Arrays.toString(sortedArray));
+    }
+}        
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Original Array: [9, 4, 7, 2, 10, 3, 1, 8, 6, 5]
+Thread-0 sorted: [4, 7, 9, 10, 2]
+Thread-1 sorted: [3, 1, 8, 6, 5]
+Final Sorted Array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

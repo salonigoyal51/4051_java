@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Validate the TextField for only entering email id using KeyAdapter
+           </h4>
+<pre>
+  import java.awt.*;
+import java.awt.event.*;
+import java.util.regex.*;
+
+public class EmailValidation extends Frame {
+
+    Label label, statusLabel;
+    TextField emailField;
+
+    public EmailValidation() {
+        // Frame title
+        super("Email Validation Example");
+
+        // Layout
+        setLayout(new FlowLayout());
+
+        // Instruction label
+        label = new Label("Enter your email:");
+        add(label);
+
+        // TextField for email
+        emailField = new TextField(25);
+        add(emailField);
+
+        // Status label
+        statusLabel = new Label();
+        add(statusLabel);
+
+        // Add KeyAdapter to validate email on key release
+        emailField.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent e) {
+                String email = emailField.getText();
+                if (isValidEmail(email)) {
+                    statusLabel.setText("Valid Email");
+                    statusLabel.setForeground(Color.GREEN);
+                } else {
+                    statusLabel.setText("Invalid Email");
+                    statusLabel.setForeground(Color.RED);
+                }
+            }
+        });
+
+        // Frame properties
+        setSize(400, 150);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Method to validate email using regex
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        if (email == null || email.isEmpty()) return false;
+        return pattern.matcher(email).matches();
+    }
+
+    public static void main(String[] args) {
+        new EmailValidation();
+    }
+}      
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Enter your email: [TextField]
+[Label] Invalid Email
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

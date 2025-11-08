@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //How to convert String to boolean
+           </h4>
+<pre>
+    public class StringToBooleanExample {
+    public static void main(String[] args) {
+        String str1 = "true";
+        String str2 = "false";
+        String str3 = "TrUe"; // case insensitive
+
+        // Convert String to boolean
+        boolean b1 = Boolean.parseBoolean(str1);
+        boolean b2 = Boolean.parseBoolean(str2);
+        boolean b3 = Boolean.parseBoolean(str3);
+
+        System.out.println("String: " + str1 + " → boolean: " + b1);
+        System.out.println("String: " + str2 + " → boolean: " + b2);
+        System.out.println("String: " + str3 + " → boolean: " + b3);
+    }
+}
+     
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   String: true → boolean: true
+String: false → boolean: false
+String: TrUe → boolean: true
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

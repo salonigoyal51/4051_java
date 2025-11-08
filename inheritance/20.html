@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). 
+            </h4>
+ <pre>
+    // Abstract base class
+abstract class Shape3D {
+    String shapeName;
+
+    // Constructor
+    Shape3D(String shapeName) {
+        this.shapeName = shapeName;
+    }
+
+    // Abstract methods
+    abstract double calculateVolume();
+    abstract double calculateSurfaceArea();
+
+    // Concrete method
+    void displayShape() {
+        System.out.println("Shape: " + shapeName);
+    }
+}
+
+// Subclass: Sphere
+class Sphere extends Shape3D {
+    double radius;
+
+    Sphere(double radius) {
+        super("Sphere");
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateVolume() {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+
+    @Override
+    double calculateSurfaceArea() {
+        return 4 * Math.PI * Math.pow(radius, 2);
+    }
+
+    void displayDetails() {
+        displayShape();
+        System.out.println("Radius: " + radius);
+        System.out.println("Volume: " + String.format("%.2f", calculateVolume()));
+        System.out.println("Surface Area: " + String.format("%.2f", calculateSurfaceArea()));
+    }
+}
+
+// Subclass: Cube
+class Cube extends Shape3D {
+    double side;
+
+    Cube(double side) {
+        super("Cube");
+        this.side = side;
+    }
+
+    @Override
+    double calculateVolume() {
+        return Math.pow(side, 3);
+    }
+
+    @Override
+    double calculateSurfaceArea() {
+        return 6 * Math.pow(side, 2);
+    }
+
+    void displayDetails() {
+        displayShape();
+        System.out.println("Side Length: " + side);
+        System.out.println("Volume: " + String.format("%.2f", calculateVolume()));
+        System.out.println("Surface Area: " + String.format("%.2f", calculateSurfaceArea()));
+    }
+}
+
+// Main class
+public class AbstractShape3DExample {
+    public static void main(String[] args) {
+        // Create objects of Sphere and Cube
+        Sphere sphere = new Sphere(5.5);
+        Cube cube = new Cube(4.0);
+
+        // Display details for Sphere
+        System.out.println("---- Sphere Details ----");
+        sphere.displayDetails();
+
+        System.out.println();
+
+        // Display details for Cube
+        System.out.println("---- Cube Details ----");
+        cube.displayDetails();
+    }
+}  
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>  
+   ---- Sphere Details ----
+Shape: Sphere
+Radius: 5.5
+Volume: 696.91
+Surface Area: 380.13
+
+---- Cube Details ----
+Shape: Cube
+Side Length: 4.0
+Volume: 64.00
+Surface Area: 96.00
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

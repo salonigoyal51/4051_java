@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create an interface Sortable with a method sort() that sorts an array of integers in ascending order. 
+            </h4>
+<pre>
+    // File: SortableExample.java
+
+// Step 1: Define the interface
+interface Sortable {
+    void sort(int[] arr);  // Abstract method
+}
+
+// Step 2: Implement BubbleSort class
+class BubbleSort implements Sortable {
+    @Override
+    public void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j + 1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("Array sorted using Bubble Sort:");
+        display(arr);
+    }
+
+    // Helper method to display array
+    public void display(int[] arr) {
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
+    }
+}
+
+// Step 3: Implement SelectionSort class
+class SelectionSort implements Sortable {
+    @Override
+    public void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // Swap arr[i] and arr[minIndex]
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+        System.out.println("Array sorted using Selection Sort:");
+        display(arr);
+    }
+
+    // Helper method to display array
+    public void display(int[] arr) {
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
+    }
+}
+
+// Step 4: Main class to test both sorting algorithms
+public class SortableExample {
+    public static void main(String[] args) {
+        int[] numbers1 = {5, 2, 9, 1, 5, 6};
+        int[] numbers2 = {8, 3, 7, 4, 9, 2};
+
+        // Using Bubble Sort
+        Sortable bubble = new BubbleSort();
+        bubble.sort(numbers1);
+
+        // Using Selection Sort
+        Sortable selection = new SelectionSort();
+        selection.sort(numbers2);
+    }
+}
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Array sorted using Bubble Sort:
+1 2 5 5 6 9 
+Array sorted using Selection Sort:
+2 3 4 7 8 9 
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

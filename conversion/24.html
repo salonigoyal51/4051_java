@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //How to convert Timestamp to Date
+           </h4>
+<pre>
+    
+     import java.sql.Timestamp;
+import java.util.Date;
+
+public class TimestampToDateExample {
+    public static void main(String[] args) {
+        // Create a Timestamp object (current time)
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println("Timestamp: " + timestamp);
+
+        // Convert Timestamp to Date
+        Date date = new Date(timestamp.getTime());
+        System.out.println("Date: " + date);
+    }
+}      
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Timestamp: 2025-10-17 19:45:30.456
+Date: Fri Oct 17 19:45:30 IST 2025
+
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

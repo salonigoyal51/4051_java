@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to compute the average of three numbers
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class AverageOfThree {
+
+    // Method to compute the average of three numbers
+    public static double findAverage(double a, double b, double c) {
+        return (a + b + c) / 3;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input three numbers
+        System.out.print("Enter the first number: ");
+        double num1 = sc.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = sc.nextDouble();
+
+        System.out.print("Enter the third number: ");
+        double num3 = sc.nextDouble();
+
+        // Call method and display result
+        double average = findAverage(num1, num2, num3);
+        System.out.println("The average of the three numbers is: " + average);
+
+        sc.close();
+    }
+}
+   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter the first number: 10
+Enter the second number: 20
+Enter the third number: 30
+The average of the three numbers is: 20.0
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

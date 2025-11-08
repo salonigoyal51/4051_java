@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //Write a Java program to create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations.  
+           </h4>
+<pre>
+ // File: EncryptableExample.java
+
+// Step 1: Define the interface
+interface Encryptable {
+    String encrypt(String data);
+    String decrypt(String encryptedData);
+}
+
+// Step 2: AES class implementing Encryptable
+class AES implements Encryptable {
+
+    @Override
+    public String encrypt(String data) {
+        // Simple mock encryption (reverse + add prefix)
+        return "AES_ENC:" + new StringBuilder(data).reverse().toString();
+    }
+
+    @Override
+    public String decrypt(String encryptedData) {
+        // Remove prefix and reverse again to simulate decryption
+        if (encryptedData.startsWith("AES_ENC:")) {
+            String reversed = encryptedData.substring(8);
+            return new StringBuilder(reversed).reverse().toString();
+        }
+        return "Invalid AES data";
+    }
+}
+
+// Step 3: RSA class implementing Encryptable
+class RSA implements Encryptable {
+
+    @Override
+    public String encrypt(String data) {
+        // Simple mock encryption (shift characters)
+        StringBuilder sb = new StringBuilder();
+        for (char c : data.toCharArray()) {
+            sb.append((char) (c + 3)); // Caesar cipher shift by 3
+        }
+        return "RSA_ENC:" + sb.toString();
+    }
+
+    @Override
+    public String decrypt(String encryptedData) {
+        if (encryptedData.startsWith("RSA_ENC:")) {
+            String shifted = encryptedData.substring(8);
+            StringBuilder sb = new StringBuilder();
+            for (char c : shifted.toCharArray()) {
+                sb.append((char) (c - 3)); // Reverse shift
+            }
+            return sb.toString();
+        }
+        return "Invalid RSA data";
+    }
+}
+
+// Step 4: Main class to test both encryption algorithms
+public class EncryptableExample {
+    public static void main(String[] args) {
+        String message = "HelloWorld";
+
+        // Create objects for AES and RSA
+        Encryptable aes = new AES();
+        Encryptable rsa = new RSA();
+
+        // Encrypt and decrypt using AES
+        System.out.println("=== AES Encryption ===");
+        String aesEncrypted = aes.encrypt(message);
+        System.out.println("Encrypted: " + aesEncrypted);
+        System.out.println("Decrypted: " + aes.decrypt(aesEncrypted));
+
+        // Encrypt and decrypt using RSA
+        System.out.println("\n=== RSA Encryption ===");
+        String rsaEncrypted = rsa.encrypt(message);
+        System.out.println("Encrypted: " + rsaEncrypted);
+        System.out.println("Decrypted: " + rsa.decrypt(rsaEncrypted));
+    }
+}    
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  === AES Encryption ===
+Encrypted: AES_ENC:dlroWolleH
+Decrypted: HelloWorld
+
+=== RSA Encryption ===
+Encrypted: RSA_ENC:KhoorZruog
+Decrypted: HelloWorld
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

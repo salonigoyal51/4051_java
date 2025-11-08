@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //determine whether a given matrix is a sparse matrix
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class SparseMatrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+        int zeroCount = 0;
+        int totalElements = rows * cols;
+
+        // Input elements of the matrix
+        System.out.println("Enter elements of the matrix:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                matrix[i][j] = sc.nextInt();
+                if (matrix[i][j] == 0)
+                    zeroCount++;
+            }
+        }
+
+        // Display the matrix
+        System.out.println("\nMatrix:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Check sparse condition: more than half of the elements are zero
+        if (zeroCount > (totalElements / 2))
+            System.out.println("\nThe given matrix IS a Sparse Matrix.");
+        else
+            System.out.println("\nThe given matrix is NOT a Sparse Matrix.");
+
+        sc.close();
+    }
+}          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter number of rows: 3
+Enter number of columns: 3
+Enter elements of the matrix:
+0 0 0
+0 5 0
+0 0 0
+
+Matrix:
+0 0 0
+0 5 0
+0 0 0
+
+The given matrix IS a Sparse Matrix.
+
+   Enter number of rows: 3
+Enter number of columns: 3
+Enter elements of the matrix:
+1 2 0
+0 3 4
+0 0 5
+
+Matrix:
+1 2 0
+0 3 4
+0 0 5
+
+The given matrix is NOT a Sparse Matrix.   
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

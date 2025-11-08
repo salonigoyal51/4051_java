@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Find 2nd largest number in an array
+           </h4>
+<pre>
+ import java.util.Scanner;
+
+public class SecondLargestNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take size of array from user
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        // Check if array has at least 2 elements
+        if (n &lt; 2) {
+            System.out.println("Array must have at least 2 elements!");
+            return;
+        }
+
+        int[] arr = new int[n];
+
+        // Take array elements as input
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Sort array in descending order
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = i + 1; j &lt; n; j++) {
+                if (arr[i] &lt; arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        // Display the 2nd largest element
+        System.out.println("The 2nd largest element in the array is: " + arr[1]);
+
+        sc.close();
+    }
+}           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the number of elements in the array: 6
+Enter 6 elements:
+10
+45
+23
+67
+89
+34
+The 2nd largest element in the array is: 67
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

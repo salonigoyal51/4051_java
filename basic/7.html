@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to convert a decimal number to binary numbers
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input decimal number
+        System.out.print("Enter a decimal number: ");
+        int decimal = sc.nextInt();
+
+        // Convert to binary using Integer.toBinaryString()
+        String binary = Integer.toBinaryString(decimal);
+
+        // Display result
+        System.out.println("Binary representation of " + decimal + " is: " + binary);
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter a decimal number: 10
+Binary representation of 10 is: 1010  
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

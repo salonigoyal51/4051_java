@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+    //connect the Java API to Database, if connection not successful then throw an exception 
+           </h4>
+<pre>  
+    import java.sql.*;
+
+public class DatabaseConnectionExample {
+
+    // Method to connect to the database
+    static Connection connectToDatabase() throws Exception {
+        String url = "jdbc:mysql://localhost:3306/testdb"; // Replace with your DB URL
+        String username = "root"; // Replace with your DB username
+        String password = "password"; // Replace with your DB password
+
+        try {
+            // Load JDBC driver (optional for newer versions of Java)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Attempt connection
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Database connected successfully.");
+            return conn;
+
+        } catch (ClassNotFoundException e) {
+            throw new Exception("JDBC Driver not found.", e);
+        } catch (SQLException e) {
+            throw new Exception("Failed to connect to the database.", e);
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            Connection connection = connectToDatabase();
+            // Perform database operations here if needed
+
+            // Close connection
+            connection.close();
+            System.out.println("Connection closed.");
+
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        System.out.println("Program finished.");
+    }
+}
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Database connected successfully.
+Connection closed.
+Program finished.
+  Exception caught: Failed to connect to the database.
+java.lang.Exception: Failed to connect to the database.
+    at DatabaseConnectionExample.connectToDatabase(DatabaseConnectionExample.java:13)
+    ...
+Program finished.
+
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

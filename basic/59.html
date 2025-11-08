@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        // check vowel or consonant
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input a character
+        System.out.print("Enter a character: ");
+        char ch = sc.next().toLowerCase().charAt(0);  // Convert to lowercase
+
+        // Check if it’s an alphabet
+        if (ch >= 'a' && ch &lt;= 'z') {
+            // Check for vowel
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println(ch + " is a vowel.");
+            } else {
+                System.out.println(ch + " is a consonant.");
+            }
+        } else {
+            System.out.println("Invalid input! Please enter an alphabet.");
+        }
+
+        sc.close();
+    }
+}
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter a character: a
+a is a vowel.
+Enter a character: K
+k is a consonant.
+Enter a character: 9
+Invalid input! Please enter an alphabet.
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

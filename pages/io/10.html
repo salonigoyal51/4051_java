@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+       // Get all characters from the file, count number of lines, words, characters and display on the screen 
+           </h4>
+<pre>
+import java.io.*;
+
+public class FileReadCount {
+    public static void main(String[] args) {
+        // File name (make sure this file exists in your project folder)
+        String fileName = "input.txt";
+
+        int lines = 0, words = 0, chars = 0;
+
+        try {
+            // Create BufferedReader to read text efficiently
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            // Read the file line by line
+            while ((line = br.readLine()) != null) {
+                lines++;                        // Count lines
+                chars += line.length();          // Count characters
+                String[] wordList = line.trim().split("\\s+"); // Split by spaces
+                if (!line.trim().isEmpty()) {    // Avoid counting empty lines
+                    words += wordList.length;    // Count words
+                }
+            }
+
+            // Close the reader
+            br.close();
+
+            // Display results
+            System.out.println("File: " + fileName);
+            System.out.println("Number of lines: " + lines);
+            System.out.println("Number of words: " + words);
+            System.out.println("Number of characters: " + chars);
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("File not found! Please check the file path.");
+        } 
+        catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+}
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Sample Input File (input.txt):
+Hello Java!
+This is a file reading example.
+Count lines, words, and characters.
+
+
+    File: input.txt
+Number of lines: 3
+Number of words: 11
+Number of characters: 73
+   
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

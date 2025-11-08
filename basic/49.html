@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Calculate Commission Percentage
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CommissionPercentage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input total sales and commission amount
+        System.out.print("Enter total sales amount: ");
+        double sales = sc.nextDouble();
+
+        System.out.print("Enter commission amount: ");
+        double commission = sc.nextDouble();
+
+        // Calculate commission percentage
+        double commissionPercentage = (commission / sales) * 100;
+
+        // Display result
+        System.out.println("Commission Percentage = " + commissionPercentage + "%");
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter total sales amount: 50000
+Enter commission amount: 2500
+Commission Percentage = 5.0%
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

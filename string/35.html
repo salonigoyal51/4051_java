@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Print even length words 
+
+           </h4>
+<pre>
+ import java.util.Scanner;
+
+public class EvenLengthWords {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string from user
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        // Split string into words
+        String[] words = str.split("\\s+"); // split by spaces
+
+        System.out.println("Even length words in the string:");
+
+        for (String word : words) {
+            if (word.length() % 2 == 0) {
+                System.out.println(word);
+            }
+        }
+
+        sc.close();
+    }
+} 
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter a string: Java is fun programming
+Even length words in the string:
+Java
+is
+programming
+Enter a string: Hello World from Java
+Even length words in the string:
+Hello
+World
+from
+Java
+
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

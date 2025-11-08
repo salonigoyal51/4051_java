@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to print all unique element in an array
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class UniqueElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input size of the array
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("\nUnique elements in the array are:");
+        for (int i = 0; i &lt; n; i++) {
+            int count = 0;
+            for (int j = 0; j &lt; n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            // Print element only if it appears once
+            if (count == 1) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the number of elements in the array: 7
+Enter 7 elements:
+4
+5
+9
+4
+9
+7
+8
+
+Unique elements in the array are:
+5 7 8
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

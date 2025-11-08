@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create multiple threads, set its name and its priority. 
+           </h4>
+<pre>
+  // File: ThreadNamePriorityExample.java
+
+class MyThread extends Thread {
+    public MyThread(String name) {
+        // set thread name in constructor
+        super(name);
+    }
+
+    @Override
+    public void run() {
+        // Print current thread name and priority
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.println(
+                "Running " + Thread.currentThread().getName() +
+                " | Priority: " + Thread.currentThread().getPriority() +
+                " | Step: " + i
+            );
+            try {
+                Thread.sleep(400); // simulate work
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(Thread.currentThread().getName() + " completed!\n");
+    }
+}
+
+public class ThreadNamePriorityExample {
+    public static void main(String[] args) {
+        // Create multiple threads with names
+        MyThread t1 = new MyThread("Thread-A");
+        MyThread t2 = new MyThread("Thread-B");
+        MyThread t3 = new MyThread("Thread-C");
+
+        // Set thread priorities
+        t1.setPriority(Thread.MIN_PRIORITY); // 1
+        t2.setPriority(Thread.NORM_PRIORITY); // 5
+        t3.setPriority(Thread.MAX_PRIORITY); // 10
+
+        // Display initial settings
+        System.out.println("=== Thread Information Before Start ===");
+        System.out.println(t1.getName() + " Priority: " + t1.getPriority());
+        System.out.println(t2.getName() + " Priority: " + t2.getPriority());
+        System.out.println(t3.getName() + " Priority: " + t3.getPriority());
+        System.out.println("======================================\n");
+
+        // Start all threads
+        t1.start();
+        t2.start();
+        t3.start();
+
+        // Wait for threads to finish
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("✅ All threads finished execution!");
+    }
+}   
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   === Thread Information Before Start ===
+Thread-A Priority: 1
+Thread-B Priority: 5
+Thread-C Priority: 10
+======================================
+
+Running Thread-A | Priority: 1 | Step: 1
+Running Thread-C | Priority: 10 | Step: 1
+Running Thread-B | Priority: 5 | Step: 1
+Running Thread-C | Priority: 10 | Step: 2
+Running Thread-C | Priority: 10 | Step: 3
+Running Thread-B | Priority: 5 | Step: 2
+Running Thread-A | Priority: 1 | Step: 2
+...
+Thread-C completed!
+Thread-B completed!
+Thread-A completed!
+
+✅ All threads finished execution!
+                  
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

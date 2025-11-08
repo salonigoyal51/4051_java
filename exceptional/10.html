@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //throw the SQL Query, insert, delete, update, if not successful then throw an exception
+           </h4>
+<pre>               
+     import java.sql.*;
+import java.util.Scanner;
+
+public class SQLQueryExceptionExample {
+
+    // Method to execute INSERT, UPDATE, DELETE queries
+    static void executeQuery(String sql, Connection conn) throws Exception {
+        try {
+            Statement stmt = conn.createStatement();
+            int result = stmt.executeUpdate(sql); // executeUpdate returns number of affected rows
+
+            if (result > 0) {
+                System.out.println("Query executed successfully. Rows affected: " + result);
+            } else {
+                throw new Exception("Query executed but no rows were affected.");
+            }
+
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new Exception("SQL Exception occurred: " + e.getMessage(), e);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Database URL: ");
+        String dbUrl = sc.nextLine();
+
+        System.out.print("Enter Database Username: ");
+        String username = sc.nextLine();
+
+        System.out.print("Enter Database Password: ");
+        String password = sc.nextLine();
+
+        try {
+            // Connect to database
+            Connection conn = DriverManager.getConnection(dbUrl, username, password);
+            System.out.println("Database connected successfully.");
+
+            System.out.println("\nEnter SQL query (INSERT, UPDATE, DELETE): ");
+            String sql = sc.nextLine();
+
+            // Execute the query
+            executeQuery(sql, conn);
+
+            // Close connection
+            conn.close();
+            System.out.println("Connection closed.");
+
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        sc.close();
+        System.out.println("Program finished.");
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ INSERT INTO employees (id, name, salary) VALUES (1, 'John', 5000);
+Database connected successfully.
+Query executed successfully. Rows affected: 1
+Connection closed.
+Program finished.
+DELETE FROM employees WHERE id=999;
+Database connected successfully.
+Exception caught: Query executed but no rows were affected.
+Program finished.  
+    
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

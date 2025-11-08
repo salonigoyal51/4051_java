@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //display the middle character of a string. 
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class MiddleCharacter {
+
+    // Method to display middle character(s)
+    static void displayMiddle(String str) {
+        int length = str.length();
+        if (length == 0) {
+            System.out.println("The string is empty.");
+            return;
+        }
+
+        if (length % 2 == 0) {
+            // Even length → one middle character
+            int midIndex = length / 2;
+            System.out.println("Middle character: " + str.charAt(midIndex));
+        } else {
+            // Odd length → two middle characters
+            int midIndex = length / 2;
+            System.out.println("Middle characters: " + str.charAt(midIndex) + str.charAt(midIndex + 1));
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        displayMiddle(input);
+
+        sc.close();
+    }
+}       
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter a string: hello
+Middle characters: ll
+Enter a string: world
+Middle character: r
+Enter a string: 
+The string is empty.
+   
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

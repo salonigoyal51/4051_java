@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //display the cube of the number upto given an integer
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CubeOfNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number
+        System.out.print("Enter the number of terms: ");
+        int n = sc.nextInt();
+
+        System.out.println("\nNumber\tCube");
+        System.out.println("-----------------");
+
+        // Loop to display cube of each number
+        for (int i = 1; i &lt;= n; i++) {
+            int cube = i * i * i;
+            System.out.println(i + "\t" + cube);
+        }
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter the number of terms: 5
+
+Number	Cube
+-----------------
+1	1
+2	8
+3	27
+4	64
+5	125
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

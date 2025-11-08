@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to calculate average marks
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class AverageMarks {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of subjects
+        System.out.print("Enter the number of subjects: ");
+        int n = sc.nextInt();
+
+        double sum = 0;
+
+        // Input marks for each subject
+        for (int i = 1; i &lt;= n; i++) {
+            System.out.print("Enter marks of subject " + i + ": ");
+            double marks = sc.nextDouble();
+            sum += marks;
+        }
+
+        // Calculate average
+        double average = sum / n;
+
+        // Display result
+        System.out.println("Total Marks = " + sum);
+        System.out.println("Average Marks = " + average);
+
+        sc.close();
+    }
+}
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of subjects: 5
+Enter marks of subject 1: 78
+Enter marks of subject 2: 85
+Enter marks of subject 3: 90
+Enter marks of subject 4: 88
+Enter marks of subject 5: 95
+Total Marks = 436.0
+Average Marks = 87.2
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

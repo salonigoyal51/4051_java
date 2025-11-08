@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //Create multiple threads, show an example of join and yield methods. 
+           </h4>
+<pre>
+  // File: JoinYieldExample.java
+
+class MyThread extends Thread {
+    public MyThread(String name) {
+        super(name);
+    }
+
+    @Override
+    public void run() {
+        // Loop to demonstrate work done by each thread
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " - iteration " + i);
+
+            // Give other threads a chance to run
+            if (i == 3) {
+                System.out.println(Thread.currentThread().getName() + " yielding at iteration " + i);
+                Thread.yield();  // Suggest scheduler to switch to another thread
+            }
+
+            try {
+                Thread.sleep(500); // Simulate some work
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println(Thread.currentThread().getName() + " finished execution.");
+    }
+}
+
+public class JoinYieldExample {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread("Thread-A");
+        MyThread t2 = new MyThread("Thread-B");
+        MyThread t3 = new MyThread("Thread-C");
+
+        System.out.println("Starting Thread-A and Thread-B...");
+        t1.start();
+        t2.start();
+
+        try {
+            // Wait for t1 and t2 to finish before starting t3
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\nBoth Thread-A and Thread-B have finished. Now starting Thread-C...\n");
+        t3.start();
+
+        try {
+            t3.join(); // Wait for t3 to finish before main thread ends
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\n✅ Main thread finished after all threads completed.");
+    }
+}  
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Starting Thread-A and Thread-B...
+Thread-A - iteration 1
+Thread-B - iteration 1
+Thread-A - iteration 2
+Thread-B - iteration 2
+Thread-A - iteration 3
+Thread-A yielding at iteration 3
+Thread-B - iteration 3
+Thread-B yielding at iteration 3
+Thread-A - iteration 4
+Thread-B - iteration 4
+Thread-A - iteration 5
+Thread-B - iteration 5
+Thread-A finished execution.
+Thread-B finished execution.
+
+Both Thread-A and Thread-B have finished. Now starting Thread-C...
+
+Thread-C - iteration 1
+Thread-C - iteration 2
+Thread-C - iteration 3
+Thread-C yielding at iteration 3
+Thread-C - iteration 4
+Thread-C - iteration 5
+Thread-C finished execution.
+
+✅ Main thread finished after all threads completed.
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

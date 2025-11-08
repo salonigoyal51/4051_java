@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Change Frame Background Color as Cyan
+           </h4>
+<pre>
+   import java.awt.*;
+import java.awt.event.*;
+
+public class FrameBackgroundColor extends Frame {
+
+    public FrameBackgroundColor() {
+        // Frame title
+        super("Frame Background Color Example");
+
+        // Set layout
+        setLayout(new FlowLayout());
+
+        // Set background color to Cyan
+        setBackground(Color.CYAN);
+
+        // Add a label
+        Label label = new Label("This frame has a cyan background!");
+        add(label);
+
+        // Frame properties
+        setSize(400, 200);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new FrameBackgroundColor();
+    }
+} 
+     
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+The frame appears with a cyan background and a label:
+
+This frame has a cyan background!
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

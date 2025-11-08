@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //Write a Java program to create a class known as Person with methods called getFirstName() and getLastName().
+            </h4>
+ <pre>
+   // Base class
+class Person {
+    private String firstName;
+    private String lastName;
+
+    // Constructor
+    Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    // Method to get first name
+    String getFirstName() {
+        return firstName;
+    }
+
+    // Method to get last name
+    String getLastName() {
+        return lastName;
+    }
+}
+
+// Subclass
+class Employee extends Person {
+    private String employeeId;
+    private String jobTitle;
+
+    // Constructor
+    Employee(String firstName, String lastName, String employeeId, String jobTitle) {
+        super(firstName, lastName);  // call the parent constructor
+        this.employeeId = employeeId;
+        this.jobTitle = jobTitle;
+    }
+
+    // New method in Employee class
+    String getEmployeeId() {
+        return employeeId;
+    }
+
+    // Overriding getLastName() to include job title
+    @Override
+    String getLastName() {
+        return super.getLastName() + " (" + jobTitle + ")";
+    }
+}
+
+// Main class to test the program
+public class PersonExample {
+    public static void main(String[] args) {
+        // Create Employee object
+        Employee emp = new Employee("Anuradha", "Sharma", "E12345", "Software Engineer");
+
+        // Display details
+        System.out.println("First Name: " + emp.getFirstName());
+        System.out.println("Last Name: " + emp.getLastName()); // overridden method
+        System.out.println("Employee ID: " + emp.getEmployeeId());
+    }
+}
+   
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+First Name: Anuradha
+Last Name: Sharma (Software Engineer)
+Employee ID: E12345    
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

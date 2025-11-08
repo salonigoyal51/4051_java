@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Enter the string from user using BufferedStreamReader   
+           </h4>
+<pre>
+ import java.io.*;
+
+public class ReadStringExample {
+    public static void main(String[] args) throws IOException {
+        // Create InputStreamReader to read bytes and convert to characters
+        InputStreamReader isr = new InputStreamReader(System.in);
+        
+        // Create BufferedReader for efficient reading of text
+        BufferedReader br = new BufferedReader(isr);
+        
+        // Prompt user for input
+        System.out.print("Enter a string: ");
+        String input = br.readLine();  // Read string input
+        
+        // Display the entered string
+        System.out.println("You entered: " + input);
+        
+        // Close the BufferedReader
+        br.close();
+    }
+}        
+        
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+ Enter a string: Java Programming
+You entered: Java Programming
+  
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

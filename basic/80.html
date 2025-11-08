@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to remove html tags from a string
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class RemoveHTMLTags {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string containing HTML tags
+        System.out.print("Enter a string with HTML tags: ");
+        String html = sc.nextLine();
+
+        // Remove HTML tags using regular expression
+        String plainText = html.replaceAll("&lt;[^&gt;]*&gt;", "");
+
+        // Display result
+        System.out.println("Original String: " + html);
+        System.out.println("String after removing HTML tags: " + plainText);
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a string with HTML tags: <h1>Hello <b>World</b></h1>
+Original String: <h1>Hello <b>World</b></h1>
+String after removing HTML tags: Hello World
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class Animal with abstract methods eat() and sleep(). 
+            </h4>
+ <pre>
+        // Abstract base class
+abstract class Animal {
+    String name;
+
+    // Constructor
+    Animal(String name) {
+        this.name = name;
+    }
+
+    // Abstract methods (no body)
+    abstract void eat();
+    abstract void sleep();
+
+    // Concrete method
+    void display() {
+        System.out.println("Animal Name: " + name);
+    }
+}
+
+// Subclass: Lion
+class Lion extends Animal {
+    Lion(String name) {
+        super(name);
+    }
+
+    @Override
+    void eat() {
+        System.out.println(name + " eats meat and hunts other animals.");
+    }
+
+    @Override
+    void sleep() {
+        System.out.println(name + " sleeps for about 20 hours a day in the shade.");
+    }
+}
+
+// Subclass: Tiger
+class Tiger extends Animal {
+    Tiger(String name) {
+        super(name);
+    }
+
+    @Override
+    void eat() {
+        System.out.println(name + " eats deer and wild boar in the forest.");
+    }
+
+    @Override
+    void sleep() {
+        System.out.println(name + " sleeps for around 16 hours a day in dense forest areas.");
+    }
+}
+
+// Subclass: Deer
+class Deer extends Animal {
+    Deer(String name) {
+        super(name);
+    }
+
+    @Override
+    void eat() {
+        System.out.println(name + " grazes on grass, leaves, and fruits.");
+    }
+
+    @Override
+    void sleep() {
+        System.out.println(name + " sleeps lightly for short periods to stay alert for predators.");
+    }
+}
+
+// Main class
+public class AbstractAnimalExample {
+    public static void main(String[] args) {
+        // Create objects for each subclass
+        Animal lion = new Lion("Lion");
+        Animal tiger = new Tiger("Tiger");
+        Animal deer = new Deer("Deer");
+
+        // Display and demonstrate behavior
+        System.out.println("---- Lion Behavior ----");
+        lion.display();
+        lion.eat();
+        lion.sleep();
+
+        System.out.println("\n---- Tiger Behavior ----");
+        tiger.display();
+        tiger.eat();
+        tiger.sleep();
+
+        System.out.println("\n---- Deer Behavior ----");
+        deer.display();
+        deer.eat();
+        deer.sleep();
+    }
+}  
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>  
+   ---- Lion Behavior ----
+Animal Name: Lion
+Lion eats meat and hunts other animals.
+Lion sleeps for about 20 hours a day in the shade.
+
+---- Tiger Behavior ----
+Animal Name: Tiger
+Tiger eats deer and wild boar in the forest.
+Tiger sleeps for around 16 hours a day in dense forest areas.
+
+---- Deer Behavior ----
+Animal Name: Deer
+Deer grazes on grass, leaves, and fruits.
+Deer sleeps lightly for short periods to stay alert for predators.
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

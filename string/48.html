@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //find out first non repeated character from input String
+
+           </h4>
+<pre>
+  import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class FirstNonRepeatedCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        // Use LinkedHashMap to store character frequencies in order
+        Map<Character, Integer> charCount = new LinkedHashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            charCount.put(ch, charCount.getOrDefault(ch, 0) + 1);
+        }
+
+        // Find first non-repeated character
+        boolean found = false;
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                System.out.println("First non-repeated character: " + entry.getKey());
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No non-repeated character found.");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    
+Enter a string: programming
+First non-repeated character: p
+Enter a string: aabbcc
+No non-repeated character found.
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

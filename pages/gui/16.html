@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Create a simple AWT application that displays a TextArea with FlowLayout manager
+           </h4>
+<pre>
+  import java.awt.*;
+import java.awt.event.*;
+
+public class FlowLayoutTextAreaExample extends Frame {
+
+    TextArea textArea;
+    Label label;
+    Button button;
+
+    // Constructor
+    FlowLayoutTextAreaExample() {
+        // Set FlowLayout
+        setLayout(new FlowLayout());
+
+        // Create components
+        label = new Label("Enter your text:");
+        textArea = new TextArea(5, 30); // rows, columns
+        button = new Button("Submit");
+
+        // Add components to the frame
+        add(label);
+        add(textArea);
+        add(button);
+
+        // Frame properties
+        setTitle("FlowLayout TextArea Example");
+        setSize(400, 250);
+        setVisible(true);
+
+        // Close window on click
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new FlowLayoutTextAreaExample();
+    }
+} 
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  --------------------------------------------
+| FlowLayout TextArea Example                |
+|--------------------------------------------|
+| Enter your text:                           |
+| [                                           |
+|   (Multi-line TextArea for typing text)    |
+|                                            |
+|                                            |
+| ]                                          |
+| [ Submit ]                                 |
+ --------------------------------------------
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

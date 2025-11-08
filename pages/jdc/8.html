@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Create a Scrollable Updateable Resultset    
+           </h4>
+<pre>
+  import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableUpdatableResultSetExample {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb"; // your DB name
+        String user = "root"; // your MySQL username
+        String password = "1234"; // your MySQL password
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // 1. Load JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver Loaded Successfully!");
+
+            // 2. Establish connection
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Connection Established Successfully!");
+
+            // 3. Create a scrollable and updatable Statement
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            // 4. Execute the query (ResultSet linked to DB)
+            rs = stmt.executeQuery("SELECT * FROM students");
+
+            System.out.println("\nWhat operation do you want to perform?");
+            System.out.println("1. Insert new record");
+            System.out.println("2. Update existing record");
+            System.out.println("3. Delete record");
+            System.out.print("Enter your choice (1/2/3): ");
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1: // INSERT
+                    System.out.println("\n--- Insert New Record ---");
+                    sc.nextLine(); // consume leftover newline
+
+                    System.out.print("Enter Name: ");
+                    String name = sc.nextLine();
+
+                    System.out.print("Enter Age: ");
+                    int age = sc.nextInt();
+
+                    sc.nextLine(); // consume newline
+                    System.out.print("Enter Course: ");
+                    String course = sc.nextLine();
+
+                    // Move to insert row
+                    rs.moveToInsertRow();
+                    rs.updateString("name", name);
+                    rs.updateInt("age", age);
+                    rs.updateString("course", course);
+
+                    // Insert into DB
+                    rs.insertRow();
+                    System.out.println("🎉 New record inserted successfully!");
+                    break;
+
+                case 2: // UPDATE
+                    System.out.println("\n--- Update Existing Record ---");
+                    System.out.print("Enter ID of the student to update: ");
+                    int updateId = sc.nextInt();
+
+                    // Move to the record with given ID
+                    boolean found = false;
+                    rs.beforeFirst();
+                    while (rs.next()) {
+                        if (rs.getInt("id") == updateId) {
+                            found = true;
+
+                            sc.nextLine(); // consume newline
+                            System.out.print("Enter new Name: ");
+                            String newName = sc.nextLine();
+
+                            System.out.print("Enter new Age: ");
+                            int newAge = sc.nextInt();
+
+                            sc.nextLine();
+                            System.out.print("Enter new Course: ");
+                            String newCourse = sc.nextLine();
+
+                            // Update fields
+                            rs.updateString("name", newName);
+                            rs.updateInt("age", newAge);
+                            rs.updateString("course", newCourse);
+
+                            // Commit update
+                            rs.updateRow();
+                            System.out.println("✅ Record updated successfully!");
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        System.out.println("⚠️ No record found with ID " + updateId);
+                    }
+                    break;
+
+                case 3: // DELETE
+                    System.out.println("\n--- Delete Record ---");
+                    System.out.print("Enter ID of the student to delete: ");
+                    int deleteId = sc.nextInt();
+
+                    boolean deleted = false;
+                    rs.beforeFirst();
+                    while (rs.next()) {
+                        if (rs.getInt("id") == deleteId) {
+                            rs.deleteRow();
+                            System.out.println("🗑️ Record deleted successfully!");
+                            deleted = true;
+                            break;
+                        }
+                    }
+                    if (!deleted) {
+                        System.out.println("⚠️ No record found with ID " + deleteId);
+                    }
+                    break;
+
+                default:
+                    System.out.println("❌ Invalid choice! Please enter 1, 2, or 3.");
+            }
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("❌ MySQL JDBC Driver not found!");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("❌ Database operation failed!");
+            e.printStackTrace();
+        } finally {
+            // 5. Close all resources
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+                System.out.println("\n🔒 Connection Closed.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            sc.close();
+        }
+    }
+}       
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Driver Loaded Successfully!
+✅ Connection Established Successfully!
+
+What operation do you want to perform?
+1. Insert new record
+2. Update existing record
+3. Delete record
+Enter your choice (1/2/3): 1
+
+--- Insert New Record ---
+Enter Name: Priya
+Enter Age: 24
+Enter Course: Cloud Computing
+🎉 New record inserted successfully!
+
+🔒 Connection Closed.
+Now check in MySQL:
+SELECT * FROM students;
+✅ You’ll see the new record added!
+Other Example Runs
+  Update Example:
+  Enter your choice (1/2/3): 2
+--- Update Existing Record ---
+Enter ID of the student to update: 2
+Enter new Name: Sneha Sharma
+Enter new Age: 23
+Enter new Course: Data Analytics
+✅ Record updated successfully!
+Enter your choice (1/2/3): 3
+--- Delete Record ---
+Enter ID of the student to delete: 3
+🗑️ Record deleted successfully!
+
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

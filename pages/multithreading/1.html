@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create a basic Java thread that prints "Hello, World!" when executed
+           </h4>
+<pre>
+ // File: HelloWorldThread.java
+
+class HelloThread extends Thread {
+    // The run() method defines what the thread will do when started
+    public void run() {
+        System.out.println("Hello, World!");
+    }
+
+    public static void main(String[] args) {
+        // Create a new thread object
+        HelloThread thread = new HelloThread();
+
+        // Start the thread (this calls run() method internally)
+        thread.start();
+    }
+}    
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Hello, World!
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

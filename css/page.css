@@ -1,0 +1,30 @@
+*{
+    margin:0;
+}
+body{
+    background: linear-gradient(to left,lightgray,white);
+    padding: 1em;
+    font-size: 1.3em;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+
+}
+.first{
+    border-right: 2px solid black;
+}
+h2{
+    margin-bottom: 1em;
+}
+div{
+    padding: 1em;
+    text-align: left;
+}
+h4{
+    margin-bottom: 1em;
+}
+div pre{
+    text-align: left;
+    display: inline-block;
+}

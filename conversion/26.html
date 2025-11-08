@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //How to convert Decimal to Binary
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a decimal number: ");
+        int decimal = sc.nextInt();
+
+        // Convert decimal to binary using built-in method
+        String binary = Integer.toBinaryString(decimal);
+
+        System.out.println("Binary number: " + binary);
+    }
+}    
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a decimal number: 10
+Binary number: 1010
+
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

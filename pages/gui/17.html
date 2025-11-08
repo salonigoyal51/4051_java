@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Create a simple AWT application that displays a TextArea with Custom Layout.
+           </h4>
+<pre>
+ import java.awt.*;
+import java.awt.event.*;
+
+public class CustomLayoutTextArea extends Frame {
+
+    TextArea ta;
+    Label lbl;
+    Button btn;
+
+    // Constructor
+    CustomLayoutTextArea() {
+        // Disable layout manager — use absolute positioning
+        setLayout(null);
+
+        // Create components
+        lbl = new Label("Enter your text below:");
+        lbl.setBounds(50, 50, 200, 30);
+
+        ta = new TextArea();
+        ta.setBounds(50, 90, 300, 150);
+
+        btn = new Button("Submit");
+        btn.setBounds(150, 260, 100, 30);
+
+        // Add components
+        add(lbl);
+        add(ta);
+        add(btn);
+
+        // Frame settings
+        setTitle("Custom Layout Example");
+        setSize(400, 350);
+        setVisible(true);
+
+        // Close window
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new CustomLayoutTextArea();
+    }
+}  
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  --------------------------------------------
+| Custom Layout Example                      |
+|--------------------------------------------|
+| Enter your text below:                     |
+| [                                          |
+|   (TextArea — multi-line input box)        |
+|                                            |
+|                                            |
+| ]                                          |
+|                  [ Submit ]                |
+ --------------------------------------------
+  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

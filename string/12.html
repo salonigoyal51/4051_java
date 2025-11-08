@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Convert String to String Array
+           </h4>
+<pre>
+   import java.util.Arrays;
+import java.util.Scanner;
+
+public class StringToArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string from user
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        // Convert string to string array using space as delimiter
+        String[] arr = input.split(" "); // splits the string at spaces
+
+        // Display the array
+        System.out.println("String Array: " + Arrays.toString(arr));
+
+        sc.close();
+    }
+}
+       
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Enter a string: Java is fun
+String Array: [Java, is, fun]     
+   
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

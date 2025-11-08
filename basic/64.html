@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program that reads an positive integer and count the number of digits
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a positive integer: ");
+        int num = sc.nextInt();
+
+        // Check for non-positive input
+        if (num &lt;= 0) {
+            System.out.println("Please enter a positive integer!");
+        } else {
+            int count = 0;
+            int temp = num;
+
+            // Count digits using loop
+            while (temp &gt; 0) {
+                temp = temp / 10;  // Remove last digit
+                count++;           // Increase digit count
+            }
+
+            System.out.println("Number of digits in " + num + " = " + count);
+        }
+
+        sc.close();
+    }
+}    
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter a positive integer: 12345
+Number of digits in 12345 = 5
+Enter a positive integer: 7
+Number of digits in 7 = 1
+Enter a positive integer: 0
+Please enter a positive integer! 
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

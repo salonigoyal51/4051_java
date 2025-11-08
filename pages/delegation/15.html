@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Display Text in Different Fonts
+           </h4>
+<pre>
+  import java.awt.*;
+
+public class DifferentFontsExample extends Frame {
+
+    public DifferentFontsExample() {
+        // Frame title
+        super("Display Text in Different Fonts");
+
+        // Layout
+        setLayout(new FlowLayout());
+
+        // Create Labels with different fonts
+        Label label1 = new Label("This is Arial Bold 16");
+        label1.setFont(new Font("Arial", Font.BOLD, 16));
+        add(label1);
+
+        Label label2 = new Label("This is Times New Roman Italic 18");
+        label2.setFont(new Font("Times New Roman", Font.ITALIC, 18));
+        add(label2);
+
+        Label label3 = new Label("This is Courier New Plain 20");
+        label3.setFont(new Font("Courier New", Font.PLAIN, 20));
+        add(label3);
+
+        Label label4 = new Label("This is Verdana Bold Italic 22");
+        label4.setFont(new Font("Verdana", Font.BOLD | Font.ITALIC, 22));
+        add(label4);
+
+        // Frame properties
+        setSize(500, 250);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new DifferentFontsExample();
+    }
+}      
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+Label Components:
+
+Each label displays text in a different font.
+
+Font Constructor:
+
+new Font(String name, int style, int size)
+
+
+name → Font name (e.g., Arial, Times New Roman)
+
+style → Font.PLAIN, Font.BOLD, Font.ITALIC, or combination
+
+size → Font size in points
+
+Layout: FlowLayout arranges labels vertically.
+
+Window Closing: Uses WindowAdapter to close the frame properly.
+
+⚡ Sample Output:
+
+Label 1: “This is Arial Bold 16” (bold Arial font)
+
+Label 2: “This is Times New Roman Italic 18” (italic Times New Roman)
+
+Label 3: “This is Courier New Plain 20” (plain Courier New)
+
+Label 4: “This is Verdana Bold Italic 22” (bold & italic Verdana)
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). 
+            </h4>
+ <pre>     
+      // Abstract base class
+abstract class Vehicle {
+    String brand;
+    String model;
+
+    // Constructor
+    Vehicle(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    // Abstract methods
+    abstract void startEngine();
+    abstract void stopEngine();
+
+    // Concrete method
+    void displayInfo() {
+        System.out.println("Vehicle: " + brand + " " + model);
+    }
+}
+
+// Subclass: Car
+class Car extends Vehicle {
+
+    Car(String brand, String model) {
+        super(brand, model);
+    }
+
+    @Override
+    void startEngine() {
+        System.out.println(brand + " " + model + " car engine starts with a key ignition or button start.");
+    }
+
+    @Override
+    void stopEngine() {
+        System.out.println(brand + " " + model + " car engine stops smoothly.");
+    }
+}
+
+// Subclass: Motorcycle
+class Motorcycle extends Vehicle {
+
+    Motorcycle(String brand, String model) {
+        super(brand, model);
+    }
+
+    @Override
+    void startEngine() {
+        System.out.println(brand + " " + model + " motorcycle engine starts with a kick or self-start button.");
+    }
+
+    @Override
+    void stopEngine() {
+        System.out.println(brand + " " + model + " motorcycle engine stops after turning off the ignition.");
+    }
+}
+
+// Main class
+public class AbstractVehicleExample {
+    public static void main(String[] args) {
+        // Create Car object
+        Vehicle car = new Car("Toyota", "Camry");
+        System.out.println("---- Car Details ----");
+        car.displayInfo();
+        car.startEngine();
+        car.stopEngine();
+
+        System.out.println();
+
+        // Create Motorcycle object
+        Vehicle bike = new Motorcycle("Royal Enfield", "Classic 350");
+        System.out.println("---- Motorcycle Details ----");
+        bike.displayInfo();
+        bike.startEngine();
+        bike.stopEngine();
+    }
+}  
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>  
+   ---- Car Details ----
+Vehicle: Toyota Camry
+Toyota Camry car engine starts with a key ignition or button start.
+Toyota Camry car engine stops smoothly.
+
+---- Motorcycle Details ----
+Vehicle: Royal Enfield Classic 350
+Royal Enfield Classic 350 motorcycle engine starts with a kick or self-start button.
+Royal Enfield Classic 350 motorcycle engine stops after turning off the ignition.
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

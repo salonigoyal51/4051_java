@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to reverse an array of integer values
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Reverse the array
+        for (int i = 0; i &lt; n / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[n - 1 - i];
+            arr[n - 1 - i] = temp;
+        }
+
+        // Display reversed array
+        System.out.println("Reversed array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+
+        sc.close();
+    }
+}    
+                
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements in the array: 5
+Enter 5 elements:
+10 20 30 40 50
+Reversed array:
+50 40 30 20 10
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

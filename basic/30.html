@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program to find area of equilateral triangle
+           </h4>
+<pre>
+   
+   import java.util.Scanner;
+
+public class AreaOfEquilateralTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input side of the triangle
+        System.out.print("Enter the side of the equilateral triangle: ");
+        double side = sc.nextDouble();
+
+        // Calculate area using formula: (√3 / 4) * side²
+        double area = (Math.sqrt(3) / 4) * side * side;
+
+        // Display result
+        System.out.println("Area of the equilateral triangle = " + area);
+
+        sc.close();
+    }
+}           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the side of the equilateral triangle: 6
+Area of the equilateral triangle = 15.588457268119896
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

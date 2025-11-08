@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create an abstract class Instrument with abstract methods play() and tune().
+            </h4>
+ <pre>
+      // Abstract base class
+abstract class Instrument {
+    String name;
+
+    // Constructor
+    Instrument(String name) {
+        this.name = name;
+    }
+
+    // Abstract methods
+    abstract void play();
+    abstract void tune();
+
+    // Concrete method
+    void displayInfo() {
+        System.out.println("Instrument: " + name);
+    }
+}
+
+// Subclass: Glockenspiel
+class Glockenspiel extends Instrument {
+
+    Glockenspiel() {
+        super("Glockenspiel");
+    }
+
+    @Override
+    void play() {
+        System.out.println("Playing the Glockenspiel with mallets, producing bright metallic tones.");
+    }
+
+    @Override
+    void tune() {
+        System.out.println("Tuning the Glockenspiel by adjusting the metal bars to precise pitches.");
+    }
+}
+
+// Subclass: Violin
+class Violin extends Instrument {
+
+    Violin() {
+        super("Violin");
+    }
+
+    @Override
+    void play() {
+        System.out.println("Playing the Violin with a bow, creating smooth and melodious sounds.");
+    }
+
+    @Override
+    void tune() {
+        System.out.println("Tuning the Violin by adjusting the tuning pegs and fine tuners.");
+    }
+}
+
+// Main class
+public class AbstractInstrumentExample {
+    public static void main(String[] args) {
+        // Create Glockenspiel object
+        Instrument glockenspiel = new Glockenspiel();
+        System.out.println("---- Glockenspiel Details ----");
+        glockenspiel.displayInfo();
+        glockenspiel.play();
+        glockenspiel.tune();
+
+        System.out.println();
+
+        // Create Violin object
+        Instrument violin = new Violin();
+        System.out.println("---- Violin Details ----");
+        violin.displayInfo();
+        violin.play();
+        violin.tune();
+    }
+}  
+           
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+   ---- Glockenspiel Details ----
+Instrument: Glockenspiel
+Playing the Glockenspiel with mallets, producing bright metallic tones.
+Tuning the Glockenspiel by adjusting the metal bars to precise pitches.
+
+---- Violin Details ----
+Instrument: Violin
+Playing the Violin with a bow, creating smooth and melodious sounds.
+Tuning the Violin by adjusting the tuning pegs and fine tuners.
+
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

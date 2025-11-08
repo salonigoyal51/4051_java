@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //Create a program, showing an example of method overriding
+            </h4>
+ <pre>
+   // Parent class
+class Animal {
+    // Method in parent class
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    // Overriding the parent class method
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks: Woof Woof!");
+    }
+}
+
+// Main class
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        // Creating object of parent class
+        Animal a = new Animal();
+        a.makeSound();  // Calls parent method
+
+        // Creating object of child class
+        Dog d = new Dog();
+        d.makeSound();  // Calls overridden method
+
+        // Using parent reference for child object (Polymorphism)
+        Animal obj = new Dog();
+        obj.makeSound();  // Calls Dog's version (runtime polymorphism)
+    }
+}       
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+ Animal makes a sound
+Dog barks: Woof Woof!
+Dog barks: Woof Woof!   
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

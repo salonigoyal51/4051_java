@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Write a Java program to show an example of nested try block
+           </h4>
+<pre>
+     import java.util.Scanner;
+
+public class NestedTryExample {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] arr = {10, 20, 30};
+
+        try {
+            System.out.print("Enter index to access: ");
+            int index = sc.nextInt();
+
+            try {
+                // Access array element (may throw ArrayIndexOutOfBoundsException)
+                System.out.println("Array element at index " + index + ": " + arr[index]);
+
+                System.out.print("Enter divisor: ");
+                int divisor = sc.nextInt();
+
+                // Division (may throw ArithmeticException)
+                int result = arr[index] / divisor;
+                System.out.println("Division result: " + result);
+
+            } catch (ArithmeticException e) {
+                System.out.println("Inner catch: ArithmeticException caught - " + e.getMessage());
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Outer catch: ArrayIndexOutOfBoundsException caught - " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Outer catch: General Exception caught - " + e.getMessage());
+        }
+
+        System.out.println("Program continues after nested try blocks.");
+        sc.close();
+    }
+}
+      
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter index to access: 1
+Array element at index 1: 20
+Enter divisor: 4
+Division result: 5
+Program continues after nested try blocks.
+Enter index to access: 2
+Array element at index 2: 30
+Enter divisor: 0
+Inner catch: ArithmeticException caught - / by zero
+Program continues after nested try blocks.
+Enter index to access: 5
+Outer catch: ArrayIndexOutOfBoundsException caught - Index 5 out of bounds for length 3
+Program continues after nested try blocks.
+
+     
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

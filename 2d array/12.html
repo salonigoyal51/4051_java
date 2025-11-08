@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Transpose matrix
+           </h4>
+<pre>
+    import java.util.Scanner;
+
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+        int[][] transpose = new int[cols][rows];
+
+        // Input elements of the matrix
+        System.out.println("Enter elements of the matrix:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        // Find transpose
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        // Display original matrix
+        System.out.println("\nOriginal Matrix:");
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Display transpose
+        System.out.println("\nTranspose of the Matrix:");
+        for (int i = 0; i &lt; cols; i++) {
+            for (int j = 0; j &lt; rows; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}          
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Enter number of rows: 2
+Enter number of columns: 3
+Enter elements of the matrix:
+1 2 3
+4 5 6
+
+Original Matrix:
+1 2 3
+4 5 6
+
+Transpose of the Matrix:
+1 4
+2 5
+3 6  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

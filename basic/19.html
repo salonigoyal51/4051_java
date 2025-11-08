@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //program to convert seconds to hour, minute and seconds
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class ConvertSeconds {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input total seconds
+        System.out.print("Enter total seconds: ");
+        int totalSeconds = sc.nextInt();
+
+        // Convert seconds into hours, minutes, and seconds
+        int hours = totalSeconds / 3600;         // 1 hour = 3600 seconds
+        int minutes = (totalSeconds % 3600) / 60; // remaining minutes
+        int seconds = totalSeconds % 60;          // remaining seconds
+
+        // Display result
+        System.out.println(hours + " hour(s), " + minutes + " minute(s), " + seconds + " second(s)");
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter total seconds: 3665
+1 hour(s), 1 minute(s), 5 second(s)
+ 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create multiple threads, show an example of synchronization keyword
+           </h4>
+<pre>
+  // File: SynchronizationExample.java
+
+// Shared resource class
+class Counter {
+    private int count = 0;
+
+    // synchronized method to increment counter safely
+    public synchronized void increment(String threadName) {
+        count++;
+        System.out.println(threadName + " incremented count to: " + count);
+        try {
+            Thread.sleep(200); // simulate some work
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+// Worker thread class
+class MyThread extends Thread {
+    private Counter counter;
+
+    public MyThread(Counter counter, String name) {
+        super(name); // set thread name
+        this.counter = counter;
+    }
+
+    @Override
+    public void run() {
+        // Each thread tries to increment counter 5 times
+        for (int i = 0; i &lt; 5; i++) {
+            counter.increment(Thread.currentThread().getName());
+        }
+    }
+}
+
+// Main class
+public class SynchronizationExample {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter(); // shared object
+
+        // Create multiple threads accessing the same counter
+        MyThread t1 = new MyThread(counter, "Thread-A");
+        MyThread t2 = new MyThread(counter, "Thread-B");
+        MyThread t3 = new MyThread(counter, "Thread-C");
+
+        // Start threads
+        t1.start();
+        t2.start();
+        t3.start();
+
+        // Wait for all to finish
+        t1.join();
+        t2.join();
+        t3.join();
+
+        System.out.println("\n✅ Final Counter Value: " + counter.getCount());
+    }
+}    
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Thread-A incremented count to: 1
+Thread-A incremented count to: 2
+Thread-A incremented count to: 3
+Thread-A incremented count to: 4
+Thread-A incremented count to: 5
+Thread-B incremented count to: 6
+Thread-B incremented count to: 7
+Thread-B incremented count to: 8
+Thread-B incremented count to: 9
+Thread-B incremented count to: 10
+Thread-C incremented count to: 11
+Thread-C incremented count to: 12
+Thread-C incremented count to: 13
+Thread-C incremented count to: 14
+Thread-C incremented count to: 15
+
+✅ Final Counter Value: 15
+                   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

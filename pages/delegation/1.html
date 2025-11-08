@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Display Some Text in the Frame using Labels
+           </h4>
+<pre>
+  import java.awt.*;
+import java.awt.event.*;
+
+public class LabelEventExample extends Frame implements ActionListener {
+
+    Label label;
+    Button button;
+
+    public LabelEventExample() {
+        // Set frame title
+        super("Delegation Event Example");
+
+        // Set layout
+        setLayout(new FlowLayout());
+
+        // Create Label
+        label = new Label("Click the button to display text.");
+        add(label);
+
+        // Create Button
+        button = new Button("Click Me");
+        add(button);
+
+        // Register event listener (delegation model)
+        button.addActionListener(this);
+
+        // Frame properties
+        setSize(400, 150);
+        setVisible(true);
+
+        // Window closing event
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // Handle button click
+    public void actionPerformed(ActionEvent e) {
+        label.setText("Hello! This text is displayed in the Label.");
+    }
+
+    public static void main(String[] args) {
+        new LabelEventExample();
+    }
+}      
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+1.initial frame shows:
+    Click the button to display text.
+[Click Me]
+2.after clicking buttons:
+Hello! This text is displayed in the Label.
+[Click Me]
+
+    
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

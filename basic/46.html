@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //Program To Calculate CGPA Percentage
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class CalculateCGPA {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of subjects
+        System.out.print("Enter the number of subjects: ");
+        int n = sc.nextInt();
+
+        double totalGradePoints = 0;
+
+        // Input grade points for each subject
+        for (int i = 1; i &lt;= n; i++) {
+            System.out.print("Enter grade point for subject " + i + ": ");
+            double grade = sc.nextDouble();
+            totalGradePoints += grade;
+        }
+
+        // Calculate CGPA
+        double cgpa = totalGradePoints / n;
+
+        // Convert CGPA to percentage (Approximation: Percentage = CGPA × 9.5)
+        double percentage = cgpa * 9.5;
+
+        // Display results
+        System.out.println("\nYour CGPA = " + cgpa);
+        System.out.println("Equivalent Percentage = " + percentage + "%");
+
+        sc.close();
+    }
+}   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   Enter the number of subjects: 5
+Enter grade point for subject 1: 8.5
+Enter grade point for subject 2: 9.0
+Enter grade point for subject 3: 7.5
+Enter grade point for subject 4: 8.0
+Enter grade point for subject 5: 9.2
+
+Your CGPA = 8.44
+Equivalent Percentage = 80.18%
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

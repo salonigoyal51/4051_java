@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+//Program to remove duplicate element in array
+        
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take size of array from user
+        System.out.print("Enter the number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Take array elements as input
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Sort array first (so duplicates come together)
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = i + 1; j &lt; n; j++) {
+                if (arr[i] &gt; arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        // Remove duplicates
+        int[] temp = new int[n];
+        int j = 0;
+        for (int i = 0; i &lt; n - 1; i++) {
+            if (arr[i] != arr[i + 1]) {
+                temp[j++] = arr[i];
+            }
+        }
+        temp[j++] = arr[n - 1];
+
+        // Print array after removing duplicates
+        System.out.println("Array after removing duplicate elements:");
+        for (int i = 0; i &lt; j; i++) {
+            System.out.print(temp[i] + " ");
+        }
+
+        sc.close();
+    }
+}      
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    Enter the number of elements in the array: 8
+Enter 8 elements:
+4
+2
+8
+4
+6
+2
+9
+8
+Array after removing duplicate elements:
+2 4 6 8 9 
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

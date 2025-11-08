@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+              //create a package with public class and protected members to be accessed in another class. 
+           </h4>
+<pre>
+  // File: Person.java
+package mypackage;
+
+public class Person {
+    // Protected members — accessible in subclasses even outside the package
+    protected String name;
+    protected int age;
+
+    // Public method to set values
+    public void setPerson(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Protected method (can be accessed by subclass)
+    protected void displayPerson() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+// File: AccessProtected.java
+import mypackage.Person;
+
+// Create subclass to access protected members
+class Employee extends Person {
+    private String designation;
+
+    public void setEmployeeDetails(String n, int a, String d) {
+        setPerson(n, a);  // Call public method from parent
+        designation = d;
+    }
+
+    public void showEmployeeDetails() {
+        System.out.println("===== Employee Details =====");
+        // Access protected members (inherited from Person)
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Designation: " + designation);
+    }
+}
+
+// Main class to run the program
+public class AccessProtected {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.setEmployeeDetails("Anuradha", 28, "Software Engineer");
+        emp.showEmployeeDetails();
+    }
+}
+
+      
+    
+     
+
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+   ===== Employee Details =====
+Name: Anuradha
+Age: 28
+Designation: Software Engineer
+                  
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

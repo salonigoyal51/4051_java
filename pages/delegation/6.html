@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+                //Program to Handle MouseEvent 
+           </h4>
+<pre>
+  import java.awt.*;
+import java.awt.event.*;
+
+public class MouseEventExample extends Frame implements MouseListener, MouseMotionListener {
+
+    Label label;
+
+    public MouseEventExample() {
+        // Frame title
+        super("Mouse Event Example");
+
+        // Layout
+        setLayout(new FlowLayout());
+
+        // Label to display mouse actions
+        label = new Label("Move or click the mouse inside the frame.");
+        add(label);
+
+        // Register mouse event listeners (delegation event model)
+        addMouseListener(this);
+        addMouseMotionListener(this);
+
+        // Frame properties
+        setSize(400, 300);
+        setVisible(true);
+
+        // Window closing
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+
+    // MouseListener methods
+    public void mouseClicked(MouseEvent e) {
+        label.setText("Mouse Clicked at (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public void mousePressed(MouseEvent e) {
+        label.setText("Mouse Pressed at (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        label.setText("Mouse Released at (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public void mouseEntered(MouseEvent e) {
+        label.setText("Mouse Entered the Frame");
+    }
+
+    public void mouseExited(MouseEvent e) {
+        label.setText("Mouse Exited the Frame");
+    }
+
+    // MouseMotionListener methods
+    public void mouseDragged(MouseEvent e) {
+        label.setText("Mouse Dragged at (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public void mouseMoved(MouseEvent e) {
+        label.setText("Mouse Moved at (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public static void main(String[] args) {
+        new MouseEventExample();
+    }
+}
+  
+      
+           
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+  Initial Frame:
+
+Move or click the mouse inside the frame.
+
+
+Mouse Events:
+
+Moving the mouse updates:
+
+Mouse Moved at (150, 100)
+
+
+Clicking the mouse updates:
+
+Mouse Clicked at (200, 120)
+
+
+Dragging the mouse updates:
+
+Mouse Dragged at (220, 140)  
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

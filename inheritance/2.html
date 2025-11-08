@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create a class called Vehicle with a method called drive(). 
+            </h4>
+ <pre>
+  // Parent class
+class Vehicle {
+    void drive() {
+        System.out.println("Driving a vehicle");
+    }
+}
+
+// Child class
+class Car extends Vehicle {
+    // Overriding the parent class method
+    @Override
+    void drive() {
+        System.out.println("Repairing a car");
+    }
+}
+
+// Main class to run the program
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        // Create an object of Vehicle
+        Vehicle v = new Vehicle();
+        v.drive(); // Calls Vehicle's method
+
+        // Create an object of Car
+        Car c = new Car();
+        c.drive(); // Calls overridden method in Car
+    }
+}           
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+   Driving a vehicle
+Repairing a car
+
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

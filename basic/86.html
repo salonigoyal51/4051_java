@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4> 
+        //find the maximum and minimum value of an array
+           </h4>
+<pre>
+   import java.util.Scanner;
+
+public class MaxMinInArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter number of elements in the array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Initialize max and min with first element
+        int max = arr[0];
+        int min = arr[0];
+
+        // Find max and min values
+        for (int i = 1; i &lt; n; i++) {
+            if (arr[i] &gt; max)
+                max = arr[i];
+            if (arr[i] &lt; min)
+                min = arr[i];
+        }
+
+        // Display result
+        System.out.println("Maximum value: " + max);
+        System.out.println("Minimum value: " + min);
+
+        sc.close();
+    }
+}
+   
+            
+</pre>
+        </div>
+        <div>
+           <h2>OUTPUT</h2>
+<pre>
+    
+Enter number of elements in the array: 6
+Enter 6 elements:
+12 45 2 67 33 9
+Maximum value: 67
+Minimum value: 2
+
+</pre>
+
+        </div>
+    </section>
+</body>
+
+</html>

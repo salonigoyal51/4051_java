@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="first">
+            <h2>PROGRAM</h2>
+            <h4>
+                //create a class called Animal with a method named move().
+            </h4>
+ <pre>
+   // Base class
+class Animal {
+    void move() {
+        System.out.println("Animals can move");
+    }
+}
+
+// Subclass
+class Cheetah extends Animal {
+    // Overriding the move() method
+    @Override
+    void move() {
+        System.out.println("Cheetah runs fast");
+    }
+}
+
+// Main class to test the program
+public class AnimalExample {
+    public static void main(String[] args) {
+        // Create an Animal object
+        Animal a = new Animal();
+        a.move(); // Calls Animal's move()
+
+        // Create a Cheetah object
+        Cheetah c = new Cheetah();
+        c.move(); // Calls Cheetah's overridden move()
+    }
+}     
+        
+</pre>
+        </div>
+        <div>
+            <h2>OUTPUT</h2>
+ <pre>
+Animals can move
+Cheetah runs fast
+  
+   
+</pre>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
